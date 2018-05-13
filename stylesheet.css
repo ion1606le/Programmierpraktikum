@@ -1,0 +1,44 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+#no-script {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f2f8ed;
+        background-color: rgb(242, 248, 237);
+        background-image: none;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto auto;
+}
+
+.no-script-message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 575px;
+    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url('sherlock.png') no-repeat;
+        background-size: auto auto;
+    background-size: 250px 200px;
+    height: 143px;
+    padding-top: 120px;
+    padding-left: 250px;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.no-script-help-link {
+    color: #4285F4;
+    font-size: 14px;
+    font-weight: normal;
+}
