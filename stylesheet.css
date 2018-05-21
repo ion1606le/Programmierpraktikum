@@ -6,6 +6,7 @@ body {
     align-items: center;
     -webkit-jutify-content: center;
     justify-content: center;
+    background: white;
 
 }
 /* Style von der Noscript Seite*/
@@ -50,51 +51,49 @@ body {
     font-weight: normal;
 }
 
-/* Style von div*/
-.container {
-    background: gray;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-jutify-content: center;
-    justify-content: center;
-}
-/*Style von Canvas*/
-#background_canvas {
-    background: #E6F3CD;
-    border-color: #99CC33;
-    border-radius: 0.5em;
-    position: relative;
-    width: 480px;
-    height: 480px;
-    
+/* Style von div_1 und div_2*/
+.grau_container {
+    background: rgb(240, 240, 240);
+    width: 960px;
+    height: 540px;
+    position: absolute;
+    top: 30px;
 }
 
+.grün_container {
+    background: #E6F3CD;
+    border: 3px solid #99CC33;
+    border-radius: 3em;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 25%;
+    top: 10%;
+}
+
+/*Style von Canvas*/
 #main_canvas {
     background: #E6F3CD;
-    border-color: #99CC33;
-    border-radius: 0.5em;
-    position: relative;
-    width: 480px;
-    height: 480px;
-    
+    border-radius: 1.5em;
 }
 
 /* Style von allen Buttons */
 .button {
     display: inline-block;
-    padding: 15px 60px;
+    width: 180px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 24px;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     outline: none;
-    color: rgb(63, 62, 62);
+    color: black;
     background-image: -webkit-linear-gradient(#CFE3A8, #99CC33);
     background-image: linear-gradient(#CFE3A8, #99CC33);
-    border: 5px solid #E6F3CD;
+    border: 5px solid rgb(95, 141, 2);
     border-radius: 2em;
+    position: absolute;
   }
   
   .button:hover {background-color: #99CC33}
@@ -106,6 +105,30 @@ body {
   }
   /* Inaktive Buttons */
   .disabled {
-      opacity: 0.6;
+      opacity: 0.2;
       cursor: not-allowed;
+  }
+  /* Menü Buttons */
+  .start {
+    text-align: center;
+    left: 31%;
+    top:15px;
+  }
+
+  .neustart {
+    display: none;
+    left: 31%;
+    top:15px;
+  }
+
+  .fortsetzen {
+    padding-left: 15px;
+    left: 31%;
+    top:89px;
+  }
+
+  .einleitung {
+    padding-left: 15px;
+    left: 31%;
+    top: 163px;
   }
