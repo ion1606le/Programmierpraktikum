@@ -1,7 +1,13 @@
 body {
     font-family: Roboto, Arial, sans-serif;
-}
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
 
+}
+/* Style von der Noscript Seite*/
 #no-script {
     position: absolute;
     left: 0;
@@ -27,7 +33,7 @@ body {
     width: 575px;
     transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url('sherlock.png') no-repeat;
+    background: url('images/detektiv.png') no-repeat;
         background-size: auto auto;
     background-size: 250px 200px;
     height: 143px;
@@ -42,3 +48,106 @@ body {
     font-size: 14px;
     font-weight: normal;
 }
+
+/* Style von div_1 und div_2*/
+.grau_container {
+    background: rgb(240, 240, 240);
+    width: 960px;
+    height: 540px;
+    position: absolute;
+    top: 30px;
+}
+
+.grün_container {
+    background: #E6F3CD;
+    border: 3px solid #99CC33;
+    border-radius: 3em;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 25%;
+    top: 10%;
+}
+
+/*Style von Canvas*/
+#main_canvas {
+    background: antiquewhite;
+    border-radius: 1.5em;
+}
+
+/* Style von allen Buttons */
+.button {
+    display: inline-block;
+    width: 180px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-image: linear-gradient(#CFE3A8, #99CC33);
+    border: 5px solid rgb(95, 141, 2);
+    border-radius: 2em;
+    position: absolute;
+  }
+  
+  .button:active {
+    background-image: linear-gradient(#CFE3A8, #99CC33);
+    transform: translateY(4px);
+  }
+  /* Inaktive Buttons */
+  .disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+  }
+  /* Menü Buttons */
+  .start {
+    text-align: center;
+    left: 31%;
+    top:15px;
+  }
+
+  .neustart {
+    display: none;
+    left: 31%;
+    top:15px;
+  }
+
+  .fortsetzen {
+    padding-left: 15px;
+    left: 31%;
+    top:89px;
+  }
+
+  .einleitung {
+    padding-left: 15px;
+    left: 31%;
+    top: 163px;
+  }
+
+  .recht {
+    display: inline-block;
+    cursor: pointer;
+    color:rgb(141, 143, 140);
+    background-image: linear-gradient(#CFE3A8, #99CC33);
+    border: 5px solid rgb(95, 141, 2);
+    border-radius: 2em;
+    position: absolute;
+    left: 92%;
+  }
+
+  .recht:active {
+    background-image: linear-gradient(#CFE3A8, #99CC33);
+    transform: translateY(4px);
+  }
+
+  .hilfe {
+      top:15px;
+      padding-left: 7px;
+      padding-right: 7px;
+  }
+  .sound {
+      top:72px;
+  }
