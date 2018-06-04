@@ -1,10 +1,13 @@
+//Dies mit windows.onload könnte eventuell lange dauern, bis die Seit komplet geladen ist
+$(document).ready(function() {
+    $('#start').click(function(){
+        $(this).parent().fadeOut();
+        //$('#main_canvas').css('display', '');
+    });
 
-var canvas=null;
-var context=null;
-
-setup=function(){
-    canvas=document.getElementById("main_canvas");
-    context=main_canvas.getContext('2d');
+   /*var canvas=document.getElementById("main_canvas");
+   var context=main_canvas.getContext("2d");
+   */
     
-}
+});
 
