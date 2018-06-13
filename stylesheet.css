@@ -1,6 +1,5 @@
 body {
     font-family: Roboto, Arial, sans-serif;
-    display: -webkit-flex;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,15 +48,59 @@ body {
     font-weight: normal;
 }
 
-/* Style von div_1 und div_2*/
+/* Style von div_1*/
 .grau_container {
     background: rgb(240, 240, 240);
     width: 960px;
-    height: 540px;
+    height: 545px;
     position: absolute;
     top: 30px;
+    border-radius: 2em;
 }
 
+/* Startlogo*/
+@keyframes zoomen{
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3) rotate(120deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale3d(0.6, 0.6, 0.6) rotate(240deg);
+    }
+
+    100% {
+        transform: scale3d(1.0, 1.0, 1.0) rotate(360deg);
+    }
+}
+
+
+#logo {
+    background: #E6F3CD;
+    border: 3px solid #99CC33;
+    border-radius: 3em;
+    width: 960px;
+    height: 540px;
+    position: absolute;
+}
+
+#logoin {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    left: 35%;
+    top: 15%;
+    background: url("images/Karten/Unbenannt-3.png") no-repeat;
+    background-size: 250px 300px;
+
+    animation-name: zoomen;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;   
+}
+
+/* Style fürs Startfenster*/
 .grün_container {
     background: #E6F3CD;
     border: 3px solid #99CC33;
@@ -69,10 +112,71 @@ body {
     top: 10%;
 }
 
+.displaynone {
+    display: none;
+}
+
+/* Style für die Hilfeseite */
+.hilfeseite {
+    background: #E6F3CD;
+    border: 3px solid #99CC33;
+    position: absolute;
+    width: 860px; 
+    height: 540px;
+    border-radius: 1.5em;
+    backface-visibility: hidden;
+    transition: 0.5s transform ease;
+    
+}
+
+.rueckseite {
+    transform: rotateY(-180deg);
+} 
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-indent: 2em;
+}
+p {
+    text-indent: 4em;
+    
+}
+
+.iconclass {
+    height: 50px;
+    width: 50px;
+    vertical-align: -20px;
+} 
+
+.iconclass_1 {
+    height: 30px;
+    width: 30px;
+    vertical-align: -10px;
+} 
+
+#a_rechts {
+    cursor: pointer;
+    color: rgb(95, 141, 2);
+    position: absolute;
+    left: 85%;
+    top: 85%;
+}
+
+#a_links {
+    cursor: pointer;
+    color: rgb(95, 141, 2);
+    position: absolute;
+    left: 8%;
+    top: 85%;
+}
 /*Style von Canvas*/
 #main_canvas {
-    background: antiquewhite;
-    border-radius: 1.5em;
+    background: #E6F3CD;
+    border: 3px solid #99CC33;
+    border-radius: 2em;
 }
 
 /* Style von allen Buttons */
@@ -143,11 +247,20 @@ body {
     transform: translateY(4px);
   }
 
-  .hilfe {
+  #hilfe {
       top:15px;
       padding-left: 7px;
       padding-right: 7px;
   }
-  .sound {
-      top:72px;
+  /* Tausche die Icons von Soundbutton */
+  .sound_icon {
+    align-items: center;
+    padding-right: 20px !important;   
+    padding-left: 14.5px !important;
+    top:78px;
   }
+
+  .sound_icon1 {
+      top:78px;
+  }
+
