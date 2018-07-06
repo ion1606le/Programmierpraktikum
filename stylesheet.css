@@ -110,6 +110,7 @@ body {
     position: absolute;
     left: 25%;
     top: 10%;
+    box-shadow: 3px 4px 3px 1px rgb(95, 141, 2);
 }
 
 .displaynone {
@@ -151,29 +152,60 @@ p {
     vertical-align: -20px;
 } 
 
-.iconclass_1 {
+.iconclass_2el {
     height: 30px;
-    width: 30px;
+    width: 60px;
     vertical-align: -10px;
 } 
 
-#a_rechts {
-    cursor: pointer;
-    color: rgb(95, 141, 2);
+.iconclass_3el {
+    height: 30px;
+    width: 90px;
+    vertical-align: -10px;
+} 
+
+.iconclass_4el {
+    height: 30px;
+    width: 130px;
+    vertical-align: -10px;
+} 
+
+
+.menu_hilfe{
+    background: #E6F3CD;
+    border: 3px solid #99CC33;
+    border-radius: 3em;
+    width: 20%;
+    height: 10%;
     position: absolute;
-    left: 85%;
+    left: 40%;
     top: 85%;
+    box-shadow: 4px 4px 3px 1px rgb(95, 141, 2);
 }
 
-#a_links {
+.a_links {
     cursor: pointer;
     color: rgb(95, 141, 2);
     position: absolute;
-    left: 8%;
-    top: 85%;
+    left: 10%;
 }
+
+.a_close {
+    cursor: pointer;
+    color: rgb(95, 141, 2);
+    position: absolute;
+    left:40%
+}
+
+.a_rechts {
+    cursor: pointer;
+    color: rgb(95, 141, 2);
+    position: absolute;
+    left: 70%;
+}
+
 /*Style von Canvas*/
-#main_canvas {
+.canvas_style {
     background: #E6F3CD;
     border: 3px solid #99CC33;
     border-radius: 2em;
@@ -264,3 +296,48 @@ p {
       top:78px;
   }
 
+  /* Kartenstapel */
+
+  #kartenstapel {
+      position: absolute;
+      height: 100px;
+      width: 80px;
+      left: 91%;
+      top: 75%;
+      background: url("images/Karten/Unbenannt-3.png");
+      background-size: cover;
+      box-shadow: 3px 4px 3px 1px rgb(95, 141, 2);
+  }
+
+  @keyframes ausgeben{
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+        left: 91%;
+        top: 75%;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale3d(0.6, 0.6, 0.6) rotate(240deg);
+    }
+
+    100% {
+        transform: scale3d(1.0, 1.0, 1.0) rotate(360deg);
+    }
+}
+
+.kartenausgeben {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    left: 35%;
+    top: 15%;
+    background: url("images/Karten/Unbenannt-3.png") no-repeat;
+    background-size: 250px 300px;
+
+    animation-name: zoomen;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;   
+}

@@ -13,14 +13,12 @@
 		<link type="text/css" href="stylesheet.css" rel="stylesheet" />
 	</head>
 	<body>	
+		<span id="x"></span> X <span id="y"></span> Y
 		<!--Das Spielcode--> 
 		<audio id="myAudio" loop>
 			<source src="audio/bsp.mp3" type="audio/mpeg" >
 		</audio>
-	<div class="grau_container" >
-		<!--<div id="logo" >
-			<div id="logoin" ></div>
-		</div>-->
+	<div id="container_grau" class="grau_container" >
 		<button id="hilfe" type="button" class="recht fa fa-question-circle fa-3x"></button>
 		<button id="sound" type="button" class="recht sound_icon fa fa-volume-off fa-3x"></button>
 		<div id="id_hilfeseite_1" class="hilfeseite rueckseite">
@@ -30,54 +28,27 @@
 			<p> <img src="images/cc_Icon/nc.png" class="iconclass">&ensp;<b>NC</b>-Das Werk darf nicht für kommerzielle Zwecke verwendet werden.</p>
 			<p> <img src="images/cc_Icon/ND.png" class="iconclass">&ensp;<b>ND</b>-Das Werk darf nicht verändert werden.</p>
 			<p> <img src="images/cc_Icon/sa.png" class="iconclass">&ensp;<b>SA</b>-Das Werk muss nach Veränderungen unter der gleichen Lizenz weitergegeben werden.</p>
-			<a id="a_rechts" href="#"><i class="fa fa-arrow-right fa-5x" aria-hidden="true"></i></a> 
+			<div class="menu_hilfe">
+				<a id="a1_links" href="#" class="a_links disabled"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+				<a id="a1_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+				<a id="a1_rechts" href="#" class="a_rechts"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
+			</div> 
 		</div>
 		<div id="id_hilfeseite_2" class="hilfeseite rueckseite">
 			<h1>Creative Commons</h1>
 			<h2>Die aktuellen Lizenzen:</h2>
-			<p> 
-				<img src="images/cc_Icon/cc.png" class="iconclass_1">
-				<img src="images/cc_Icon/zero.png" class="iconclass_1">
-				&ensp;<b>CC0</b>-Kein Copyright wenn möglich. No Copyright!
-			</p>
-			<p> 
-					<img src="images/cc_Icon/cc.png" class="iconclass_1">
-					<img src="images/cc_Icon/by.png" class="iconclass_1">
-					&ensp;<b>BY</b>-Namensnennung.
-			</p>
-			<p> 
-					<img src="images/cc_Icon/cc.png" class="iconclass_1">
-					<img src="images/cc_Icon/by.png" class="iconclass_1">
-					<img src="images/cc_Icon/sa.png" class="iconclass_1">
-					&ensp;<b>BY-ND</b>-Namensnennung, keine Bearbeitung.
-			</p>
-			<p> 
-					<img src="images/cc_Icon/cc.png" class="iconclass_1">
-					<img src="images/cc_Icon/by.png" class="iconclass_1">
-					<img src="images/cc_Icon/ND.png" class="iconclass_1">
-					&ensp;<b>BY-SA</b>-Namensnennung, Weitergabe unter gleichen Bedingungen.
-			</p>
-			<p> 
-					<img src="images/cc_Icon/cc.png" class="iconclass_1">
-					<img src="images/cc_Icon/by.png" class="iconclass_1">
-					<img src="images/cc_Icon/nc.png" class="iconclass_1">
-					&ensp;<b>BY-NC</b>-Namensnennung, nicht kommerziell.
-			</p>
-			<p> 
-					<img src="images/cc_Icon/cc.png" class="iconclass_1">
-					<img src="images/cc_Icon/by.png" class="iconclass_1">
-					<img src="images/cc_Icon/nc.png" class="iconclass_1">
-					<img src="images/cc_Icon/sa.png" class="iconclass_1">
-					&ensp;<b>BY-NC-SA</b>-Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen.
-			</p>
-			<p> 
-					<img src="images/cc_Icon/cc.png" class="iconclass_1">
-					<img src="images/cc_Icon/by.png" class="iconclass_1">
-					<img src="images/cc_Icon/nc.png" class="iconclass_1">
-					<img src="images/cc_Icon/ND.png" class="iconclass_1">
-					&ensp;<b>BY-NC-ND</b>-Namensnennung, nicht kommerziell, keine Bearbeitung.
-			</p>
-			<a id="a_links" href="#"><i class="fa fa-arrow-left fa-5x" aria-hidden="true"></i></a>
+			<p><img src="images/cc_Icon/cc0.png" class="iconclass_2el">&ensp;<b>CC0</b>-Kein Copyright wenn möglich. No Copyright!</p>
+			<p><img src="images/cc_Icon/cc-by-hilfe.png" class="iconclass_2el">&ensp;<b>BY</b>-Namensnennung.</p>
+			<p><img src="images/cc_Icon/cc-by-nd-hilfe.png" class="iconclass_3el">&ensp;<b>BY-ND</b>-Namensnennung, keine Bearbeitung.</p>
+			<p><img src="images/cc_Icon/cc-by-sa-hilfe.png" class="iconclass_3el">&ensp;<b>BY-SA</b>-Namensnennung, Weitergabe unter gleichen Bedingungen.</p>
+			<p><img src="images/cc_Icon/cc-by-nc-hilfe.png" class="iconclass_3el">&ensp;<b>BY-NC</b>-Namensnennung, nicht kommerziell.</p>
+			<p><img src="images/cc_Icon/cc-by-nc-sa-hilfe.png" class="iconclass_4el">&ensp;<b>BY-NC-SA</b>-Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen.</p>
+			<p><img src="images/cc_Icon/cc-by-nc-nd-hilfe.png" class="iconclass_4el">&ensp;<b>BY-NC-ND</b>-Namensnennung, nicht kommerziell, keine Bearbeitung.</p>
+			<div class="menu_hilfe">
+			<a id="a2_links" href="#" class="a_links"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+			<a id="a2_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+			<a id="a2_rechts" href="#" class="a_rechts disabled"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
+			</div>
 		</div>
 		<div class="grün_container">
 			<button id="start" type="button" class="button start">
@@ -93,7 +64,8 @@
 					<i class="fa fa-info-circle" aria-hidden="true"></i> Einleitung
 			</button>
 		</div>
-		<canvas  id="main_canvas" width="860px" height="540px"  >Leider unterstützt dieser Browser &lt;canvas&gt; nicht, deshald kann das Spiel nicht ausgeführt werden!</canvas>
+		<canvas  id="main_canvas" width="860px" height="540px" class="canvas_style" >Leider unterstützt dieser Browser &lt;canvas&gt; nicht, deshald kann das Spiel nicht ausgeführt werden!</canvas>
+		<div id="kartenstapel"></div>
 	</div>
 
 	<noscript> <!-- Definiere die Seite ohne JavaScript. Der Inhalt des noscript-Elements wird angezeigt, wenn in einem Kontext Javascript deaktiviert ist. -->
