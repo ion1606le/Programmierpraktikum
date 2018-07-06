@@ -13,11 +13,12 @@
 		<link type="text/css" href="stylesheet.css" rel="stylesheet" />
 	</head>
 	<body>	
+		<span id="x"></span> X <span id="y"></span> Y
 		<!--Das Spielcode--> 
 		<audio id="myAudio" loop>
 			<source src="audio/bsp.mp3" type="audio/mpeg" >
 		</audio>
-	<div class="grau_container" >
+	<div id="container_grau" class="grau_container" >
 		<button id="hilfe" type="button" class="recht fa fa-question-circle fa-3x"></button>
 		<button id="sound" type="button" class="recht sound_icon fa fa-volume-off fa-3x"></button>
 		<div id="id_hilfeseite_1" class="hilfeseite rueckseite">
@@ -63,7 +64,7 @@
 					<i class="fa fa-info-circle" aria-hidden="true"></i> Einleitung
 			</button>
 		</div>
-		<canvas  id="main_canvas" width="860px" height="540px" class="canvas_style"  >Leider unterstützt dieser Browser &lt;canvas&gt; nicht, deshald kann das Spiel nicht ausgeführt werden!</canvas>
+		<canvas  id="main_canvas" width="860px" height="540px" class="canvas_style" >Leider unterstützt dieser Browser &lt;canvas&gt; nicht, deshald kann das Spiel nicht ausgeführt werden!</canvas>
 		<div id="kartenstapel"></div>
 	</div>
 
