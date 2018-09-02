@@ -3,7 +3,7 @@ function preloader(){
     var i=0;
     var j=0;
     imageObj=[
-        [],[],[],[],[],[],[],[],[],[]
+        [],[],[],[],[],[],[],[],[],[],[],[]
     ];
     //Multidimensionales Array für Images imageArray[][]
     var imageArray=[
@@ -16,11 +16,13 @@ function preloader(){
         /*CC-BY-NC-SA*/ ["images/Spielkarten_1/cc-by-nc-sa/Sk_detektive-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Sk_fi_text-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl-zahnrad-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_3D-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_elp-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_film-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_foto-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_platine-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_ppt-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_tabelle-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_ton-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_video-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_worte-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_wuerfel-cc-by-nc-sa.png"],
         /*Icon_Antworten*/ ["images/cc_Icon/Icon_2/cc0.png", "images/cc_Icon/Icon_2/cc-by.png", "images/cc_Icon/Icon_2/cc-by-nc.png", "images/cc_Icon/Icon_2/cc-by-sa.png", "images/cc_Icon/Icon_2/cc-by-nd.png", "images/cc_Icon/Icon_2/cc-by-nc-nd.png", "images/cc_Icon/Icon_2/cc-by-nc-sa.png"],
         /* Kreise */ ["images/kreis_grau.png", "images/kreis_gruen.png", "images/kreis_rot.png"], 
-        /* Tafel */ ["images/tafel.png"]
+        /* Tafel */ ["images/tafel.png"],
+        /* Tutorial */ ["images/Spielkarten_2/kürzel_0.png", "images/Spielkarten_2/kürzel_by.png", "images/Spielkarten_2/kürzel_sa.png", "images/Spielkarten_2/kürzel_nc.png", "images/Spielkarten_2/icon_Kürzel_ND.png", "images/Spielkarten_2/kürzel_by_nc.png", "images/Spielkarten_2/kürzel_by_sa.png", "images/Spielkarten_2/kürzel_by_nd.png", "images/Spielkarten_2/kürzel_by_nc_nd.png", "images/Spielkarten_2/kürzel_by_nc_sa.png"],
+        /* Tutorial-Antworten */ ["images/cc_Icon/Icon_1/cc0.png", "images/cc_Icon/Icon_1/cc-by.png", "images/cc_Icon/Icon_1/cc-sa.png", "images/cc_Icon/Icon_1/cc-nc.png", "images/cc_Icon/Icon_1/cc-nd.png", "images/cc_Icon/Icon_1/cc-by-nc.png", "images/cc_Icon/Icon_1/cc-by-sa.png", "images/cc_Icon/Icon_1/cc-by-nd.png", "images/cc_Icon/Icon_1/cc-by-nc-nd.png", "images/cc_Icon/Icon_1/cc-by-nc-sa.png"]
     ]; 
 
      //Preloading starten
-     for (i=0; i<=9; i++)
+     for (i=0; i<=11; i++)
      {
          for (j=0; j<imageArray[i].length; j++){
          imageObj[i][j]=new Image();
@@ -39,36 +41,36 @@ $(document).ready(function() {
     var min=0;
     var max_1=14;
     var max_2=6;
+    var max_3=9;
     var score=0;
     var gindex_1=0;
     var gindex_2=0;
     var gicon_index=[];
     var n=0;
+    var gkindex=0
+    var gkicon_index=[];
     
     if (localStorage.getItem('INDEX_1')!=null)
     {
-        /* $('#start').toggleClass("displaynone");
-        $('#neustart').toggleClass("displaynone"); */
         $('#fortsetzen').removeClass("disabled");
     }
 
-    // Startbutton Click
-    $('#start').click(function(){
+    // Tutorialbutton Click
+    $('#tutorial').click(function(){
         $(this).parent().fadeOut();
         $('#main_canvas').removeClass("canvas_style", 25, 50, "text");
        //Hintergrung bzw. Tafel
         context.drawImage(imageObj[9][0], 10, 11, 840, 520);
-        //Score
-        context.font="20px Georgia";
-        context.fillStyle="white";
-        context.fillText("Score: " + score,740,50); 
-        $('#level').toggleClass("disabled_1");
-        $('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        //Kartenstapel_2 ein-/ ausblenden
+        $('#kartenstapel_2').removeClass("displaynone");
+        $('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        document.getElementById("home").style.display = "block";
         
     });
 
     // Neustartbutton Click
     $('#neustart').click(function(){
+        context.clearRect(10, 11, 840, 520);
         $(this).parent().fadeOut();
         $('#main_canvas').removeClass("canvas_style", 25, 50, "text");
        //Hintergrung bzw. Tafel
@@ -79,6 +81,10 @@ $(document).ready(function() {
         context.fillText("Score: " + score,740,50); 
         $('#level').toggleClass("disabled_1");
         $('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        $('#kartenstapel').removeClass("displaynone");
+        $('#kartenstapel_2').addClass("displaynone");
+        document.getElementById("home").style.display = "block";
+
         
     });
 
@@ -94,6 +100,9 @@ $(document).ready(function() {
         var icon_index_1 = JSON.parse(localStorage.getItem('ICON_INDEX'));
         $('#level').toggleClass("disabled_1");
         $('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        $('#kartenstapel').removeClass("displaynone");
+        $('#kartenstapel_2').addClass("displaynone");
+        document.getElementById("home").style.display = "block";
 
         //Hintergrung bzw. Tafel
         context.drawImage(imageObj[9][0], 10, 11, 840, 520);
@@ -118,6 +127,58 @@ $(document).ready(function() {
         context.drawImage(imageObj[8][0], n, 422, 25, 25);
         }
 
+    });
+
+    //Kartenstapel_Tutorial Click
+    $('#kartenstapel_2').click(function(){
+        var kindex=Math.floor(Math.random()*(max_3-min+1))+min;
+        gkindex=kindex;
+        var p=Math.floor(Math.random()*(max_2-min+1))+min;
+        var kicon_index=[];
+        gkicon_index=kicon_index;
+        var m=0;
+        $('#k_play_2').removeClass("fa-play").addClass("fa-hand-o-right");
+        
+        while (m<=6){
+            var x=Math.floor(Math.random()*(max_3-min+1))+min;
+            if (kicon_index.includes(x)==false && m<=6){
+                kicon_index[m]=x;
+                m++;
+            }
+            else if (kicon_index.includes(x)==true && m<=6){
+                continue;
+            }
+        }
+
+        for (var i=0; i<=6; i++)
+        {
+            if(kicon_index.includes(kindex)==false && i<=6){
+                kicon_index.splice(p, 1, kindex);
+            }
+            else if (kicon_index.includes(kindex)==true && i<=6){
+                continue;
+            }
+        }
+        context.drawImage(imageObj[10][kindex], 313, 60, 213, 320);
+       
+        console.log(kindex);
+        console.log(gkindex);
+        console.log(kicon_index);
+        console.log(gkicon_index);
+
+        //Antworten
+        context.drawImage(imageObj[11][kicon_index[0]], 50, 450, 100, 32);
+        context.drawImage(imageObj[11][kicon_index[1]], 160, 450, 100, 32);
+        context.drawImage(imageObj[11][kicon_index[2]], 270, 450, 100, 32);
+        context.drawImage(imageObj[11][kicon_index[3]], 380, 450, 100, 32);
+        context.drawImage(imageObj[11][kicon_index[4]], 490, 450, 100, 32);
+        context.drawImage(imageObj[11][kicon_index[5]], 600, 450, 100, 32);
+        context.drawImage(imageObj[11][kicon_index[6]], 710, 450, 100, 32);
+
+        //Kreise zeichen
+        for (n=55; n<=727; n=n+110){
+        context.drawImage(imageObj[8][0], n, 422, 25, 25);
+        }
     });
 
     //Kartenstappel Click
@@ -211,7 +272,7 @@ $(document).ready(function() {
             }
         } 
 
-        if ((gindex_1==6 && (gindex_2==0 || gindex_2==1 || gindex_2==2 || gindex_2==6)) || (gindex_2==6 && (gindex_1==0 || gindex_1==1 || gindex_1==2 || gindex_1==6))) 
+        else if ((gindex_1==6 && (gindex_2==0 || gindex_2==1 || gindex_2==2 || gindex_2==6)) || (gindex_2==6 && (gindex_1==0 || gindex_1==1 || gindex_1==2 || gindex_1==6))) 
         {
             if (btnplay.checkClicked() && gicon_index[0]==6)
             {
@@ -274,7 +335,7 @@ $(document).ready(function() {
         } 
         
     /* BY-NC-ND */
-        if ((gindex_1==5 && (gindex_2==0 || gindex_2==1 || gindex_2==2 || gindex_2==3 || gindex_2==4 || gindex_2==5)) || (gindex_2==5 && (gindex_1==0 || gindex_1==1 || gindex_1==2 || gindex_1==3 || gindex_1==4 || gindex_1==5)))
+        else if ((gindex_1==5 && (gindex_2==0 || gindex_2==1 || gindex_2==2 || gindex_2==3 || gindex_2==4 || gindex_2==5)) || (gindex_2==5 && (gindex_1==0 || gindex_1==1 || gindex_1==2 || gindex_1==3 || gindex_1==4 || gindex_1==5)))
         {
             if (btnplay.checkClicked())
             {
@@ -308,7 +369,7 @@ $(document).ready(function() {
         }   
         
     /* BY-ND */
-        if ((gindex_1==4 && (gindex_2==0 || gindex_2==1 || gindex_2==2 || gindex_2==3 || gindex_2==4)) || (gindex_2==4 && (gindex_1==0 || gindex_1==1 || gindex_1==2 || gindex_1==3 || gindex_1==4)))
+        else if ((gindex_1==4 && (gindex_2==0 || gindex_2==1 || gindex_2==2 || gindex_2==3 || gindex_2==4)) || (gindex_2==4 && (gindex_1==0 || gindex_1==1 || gindex_1==2 || gindex_1==3 || gindex_1==4)))
         {
             if (btnplay.checkClicked())
             {
@@ -342,7 +403,7 @@ $(document).ready(function() {
         }   
         
     /* BY-NC */
-        if ((gindex_1==2 && gindex_2==3) || (gindex_1==3 && gindex_2==2))
+        else if ((gindex_1==2 && gindex_2==3) || (gindex_1==3 && gindex_2==2))
         {
             if (btnplay.checkClicked())
             {
@@ -375,7 +436,7 @@ $(document).ready(function() {
             }
         }    
 
-        if ((gindex_1==2 && (gindex_2==0 || gindex_2==1 || gindex_2==2)) || (gindex_2==2 && (gindex_1==0 || gindex_1==1 || gindex_1==2))) 
+        else if ((gindex_1==2 && (gindex_2==0 || gindex_2==1 || gindex_2==2)) || (gindex_2==2 && (gindex_1==0 || gindex_1==1 || gindex_1==2))) 
         {
             if (btnplay.checkClicked() && (gicon_index[0]==2 || gicon_index[0]==5 || gicon_index[0]==6))
             {
@@ -438,7 +499,7 @@ $(document).ready(function() {
         }
 
     /* BY-SA */
-        if ((gindex_1==3 && (gindex_2==0 || gindex_2==1 || gindex_2==3)) || (gindex_2==3 && (gindex_1==0 || gindex_1==1 || gindex_1==3))) 
+        else if ((gindex_1==3 && (gindex_2==0 || gindex_2==1 || gindex_2==3)) || (gindex_2==3 && (gindex_1==0 || gindex_1==1 || gindex_1==3))) 
         {
             if (btnplay.checkClicked() && gicon_index[0]==3)
             {
@@ -501,7 +562,7 @@ $(document).ready(function() {
         }    
     
     /* BY */
-        if ((gindex_1==1 && (gindex_2==0 || gindex_2==1)) || (gindex_2==1 && (gindex_1==0 || gindex_1==1))) 
+        else if ((gindex_1==1 && (gindex_2==0 || gindex_2==1)) || (gindex_2==1 && (gindex_1==0 || gindex_1==1))) 
         {
             if (btnplay.checkClicked() && (gicon_index[0]==1 || gicon_index[0]==2 || gicon_index[0]==3 || gicon_index[0]==4 || gicon_index[0]==5 || gicon_index[0]==6))
             {
@@ -561,8 +622,399 @@ $(document).ready(function() {
                 context.drawImage(imageObj[8][2], 715, 422, 25, 25);
                 score--;
             }
+        }   
+        
+    /* Lösungen für Tutorial */
+    /* Zero */
+        else if (gkindex==0){
+            if(btnplay.checkClicked() && gkicon_index[0]==0){
+                context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+            }else if (btnplay.checkClicked() && gkicon_index[0]!=0){
+                context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+            }
+            else if (btnplay_1.checkClicked() && gkicon_index[1]==0){
+                context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+            }else if (btnplay_1.checkClicked() && gkicon_index[1]!=0){
+                context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+            }
+            else if (btnplay_2.checkClicked() && gkicon_index[2]==0){
+                context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+            }else if (btnplay_2.checkClicked() && gkicon_index[2]!=0){
+                context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+            }
+            else if (btnplay_3.checkClicked() && gkicon_index[3]==0){
+                context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+            }else if (btnplay_3.checkClicked() && gkicon_index[3]!=0){
+                context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+            }
+            else if (btnplay_4.checkClicked() && gkicon_index[4]==0){
+                context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+            }else if (btnplay_4.checkClicked() && gkicon_index[4]!=0){
+                context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+            }
+            else if (btnplay_5.checkClicked() && gkicon_index[5]==0){
+                context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+            }else if (btnplay_5.checkClicked() && gkicon_index[5]!=0){
+                context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+            }
+            else if (btnplay_6.checkClicked() && gkicon_index[6]==0){
+                context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+            }else if (btnplay_6.checkClicked() && gkicon_index[6]!=0){
+                context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+            }
         }    
-    }
+     
+    /* BY */
+        else if (gkindex==1){
+            if(btnplay.checkClicked() && gkicon_index[0]==1){
+                context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+            }else if (btnplay.checkClicked() && gkicon_index[0]!=1){
+                context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+            }
+            else if (btnplay_1.checkClicked() && gkicon_index[1]==1){
+                context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+            }else if (btnplay_1.checkClicked() && gkicon_index[1]!=1){
+                context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+            }
+            else if (btnplay_2.checkClicked() && gkicon_index[2]==1){
+                context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+            }else if (btnplay_2.checkClicked() && gkicon_index[2]!=1){
+                context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+            }
+            else if (btnplay_3.checkClicked() && gkicon_index[3]==1){
+                context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+            }else if (btnplay_3.checkClicked() && gkicon_index[3]!=1){
+                context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+            }
+            else if (btnplay_4.checkClicked() && gkicon_index[4]==1){
+                context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+            }else if (btnplay_4.checkClicked() && gkicon_index[4]!=1){
+                context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+            }
+            else if (btnplay_5.checkClicked() && gkicon_index[5]==1){
+                context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+            }else if (btnplay_5.checkClicked() && gkicon_index[5]!=1){
+                context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+            }
+            else if (btnplay_6.checkClicked() && gkicon_index[6]==1){
+                context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+            }else if (btnplay_6.checkClicked() && gkicon_index[6]!=1){
+                context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+            }
+        }
+    
+    /* SA */
+        else if (gkindex==2){
+            if(btnplay.checkClicked() && gkicon_index[0]==2){
+                context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+            }else if (btnplay.checkClicked() && gkicon_index[0]!=2){
+                context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+            }
+            else if (btnplay_1.checkClicked() && gkicon_index[1]==2){
+                context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+            }else if (btnplay_1.checkClicked() && gkicon_index[1]!=2){
+                context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+            }
+            else if (btnplay_2.checkClicked() && gkicon_index[2]==2){
+                context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+            }else if (btnplay_2.checkClicked() && gkicon_index[2]!=2){
+                context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+            }
+            else if (btnplay_3.checkClicked() && gkicon_index[3]==2){
+                context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+            }else if (btnplay_3.checkClicked() && gkicon_index[3]!=2){
+                context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+            }
+            else if (btnplay_4.checkClicked() && gkicon_index[4]==2){
+                context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+            }else if (btnplay_4.checkClicked() && gkicon_index[4]!=2){
+                context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+            }
+            else if (btnplay_5.checkClicked() && gkicon_index[5]==2){
+                context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+            }else if (btnplay_5.checkClicked() && gkicon_index[5]!=2){
+                context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+            }
+            else if (btnplay_6.checkClicked() && gkicon_index[6]==2){
+                context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+            }else if (btnplay_6.checkClicked() && gkicon_index[6]!=2){
+                context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+            }
+        }
+       
+    /* NC */
+        else if (gkindex==3){
+            if(btnplay.checkClicked() && gkicon_index[0]==3){
+                context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+            }else if (btnplay.checkClicked() && gkicon_index[0]!=3){
+                context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+            }
+            else if (btnplay_1.checkClicked() && gkicon_index[1]==3){
+                context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+            }else if (btnplay_1.checkClicked() && gkicon_index[1]!=3){
+                context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+            }
+            else if (btnplay_2.checkClicked() && gkicon_index[2]==3){
+                context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+            }else if (btnplay_2.checkClicked() && gkicon_index[2]!=3){
+                context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+            }
+            else if (btnplay_3.checkClicked() && gkicon_index[3]==3){
+                context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+            }else if (btnplay_3.checkClicked() && gkicon_index[3]!=3){
+                context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+            }
+            else if (btnplay_4.checkClicked() && gkicon_index[4]==3){
+                context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+            }else if (btnplay_4.checkClicked() && gkicon_index[4]!=3){
+                context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+            }
+            else if (btnplay_5.checkClicked() && gkicon_index[5]==3){
+                context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+            }else if (btnplay_5.checkClicked() && gkicon_index[5]!=3){
+                context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+            }
+            else if (btnplay_6.checkClicked() && gkicon_index[6]==3){
+                context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+            }else if (btnplay_6.checkClicked() && gkicon_index[6]!=3){
+                context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+            }
+        }  
+        
+    /* ND */
+        else if (gkindex==4){
+        if(btnplay.checkClicked() && gkicon_index[0]==4){
+            context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+        }else if (btnplay.checkClicked() && gkicon_index[0]!=4){
+            context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+        }
+        else if (btnplay_1.checkClicked() && gkicon_index[1]==4){
+            context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+        }else if (btnplay_1.checkClicked() && gkicon_index[1]!=4){
+            context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+        }
+        else if (btnplay_2.checkClicked() && gkicon_index[2]==4){
+            context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+        }else if (btnplay_2.checkClicked() && gkicon_index[2]!=4){
+            context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+        }
+        else if (btnplay_3.checkClicked() && gkicon_index[3]==4){
+            context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+        }else if (btnplay_3.checkClicked() && gkicon_index[3]!=4){
+            context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+        }
+        else if (btnplay_4.checkClicked() && gkicon_index[4]==4){
+            context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+        }else if (btnplay_4.checkClicked() && gkicon_index[4]!=4){
+            context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+        }
+        else if (btnplay_5.checkClicked() && gkicon_index[5]==4){
+            context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+        }else if (btnplay_5.checkClicked() && gkicon_index[5]!=4){
+            context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+        }
+        else if (btnplay_6.checkClicked() && gkicon_index[6]==4){
+            context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+        }else if (btnplay_6.checkClicked() && gkicon_index[6]!=4){
+            context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+        }
+        }
+    
+    /* BY-NC */
+        else if (gkindex==5){
+        if(btnplay.checkClicked() && gkicon_index[0]==5){
+            context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+        }else if (btnplay.checkClicked() && gkicon_index[0]!=5){
+            context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+        }
+        else if (btnplay_1.checkClicked() && gkicon_index[1]==5){
+            context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+        }else if (btnplay_1.checkClicked() && gkicon_index[1]!=5){
+            context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+        }
+        else if (btnplay_2.checkClicked() && gkicon_index[2]==5){
+            context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+        }else if (btnplay_2.checkClicked() && gkicon_index[2]!=5){
+            context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+        }
+        else if (btnplay_3.checkClicked() && gkicon_index[3]==5){
+            context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+        }else if (btnplay_3.checkClicked() && gkicon_index[3]!=5){
+            context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+        }
+        else if (btnplay_4.checkClicked() && gkicon_index[4]==5){
+            context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+        }else if (btnplay_4.checkClicked() && gkicon_index[4]!=5){
+            context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+        }
+        else if (btnplay_5.checkClicked() && gkicon_index[5]==5){
+            context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+        }else if (btnplay_5.checkClicked() && gkicon_index[5]!=5){
+            context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+        }
+        else if (btnplay_6.checkClicked() && gkicon_index[6]==5){
+            context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+        }else if (btnplay_6.checkClicked() && gkicon_index[6]!=5){
+            context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+        }
+        }
+    
+    /* BY-SA */
+        else if (gkindex==6){
+        if(btnplay.checkClicked() && gkicon_index[0]==6){
+            context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+        }else if (btnplay.checkClicked() && gkicon_index[0]!=6){
+            context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+        }
+        else if (btnplay_1.checkClicked() && gkicon_index[1]==6){
+            context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+        }else if (btnplay_1.checkClicked() && gkicon_index[1]!=6){
+            context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+        }
+        else if (btnplay_2.checkClicked() && gkicon_index[2]==6){
+            context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+        }else if (btnplay_2.checkClicked() && gkicon_index[2]!=6){
+            context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+        }
+        else if (btnplay_3.checkClicked() && gkicon_index[3]==6){
+            context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+        }else if (btnplay_3.checkClicked() && gkicon_index[3]!=6){
+            context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+        }
+        else if (btnplay_4.checkClicked() && gkicon_index[4]==6){
+            context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+        }else if (btnplay_4.checkClicked() && gkicon_index[4]!=6){
+            context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+        }
+        else if (btnplay_5.checkClicked() && gkicon_index[5]==6){
+            context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+        }else if (btnplay_5.checkClicked() && gkicon_index[5]!=6){
+            context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+        }
+        else if (btnplay_6.checkClicked() && gkicon_index[6]==6){
+            context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+        }else if (btnplay_6.checkClicked() && gkicon_index[6]!=6){
+            context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+        }
+        }
+
+    /* BY-ND */
+        else if (gkindex==7){
+        if(btnplay.checkClicked() && gkicon_index[0]==7){
+            context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+        }else if (btnplay.checkClicked() && gkicon_index[0]!=7){
+            context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+        }
+        else if (btnplay_1.checkClicked() && gkicon_index[1]==7){
+            context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+        }else if (btnplay_1.checkClicked() && gkicon_index[1]!=7){
+            context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+        }
+        else if (btnplay_2.checkClicked() && gkicon_index[2]==7){
+            context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+        }else if (btnplay_2.checkClicked() && gkicon_index[2]!=7){
+            context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+        }
+        else if (btnplay_3.checkClicked() && gkicon_index[3]==7){
+            context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+        }else if (btnplay_3.checkClicked() && gkicon_index[3]!=7){
+            context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+        }
+        else if (btnplay_4.checkClicked() && gkicon_index[4]==7){
+            context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+        }else if (btnplay_4.checkClicked() && gkicon_index[4]!=7){
+            context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+        }
+        else if (btnplay_5.checkClicked() && gkicon_index[5]==7){
+            context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+        }else if (btnplay_5.checkClicked() && gkicon_index[5]!=7){
+            context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+        }
+        else if (btnplay_6.checkClicked() && gkicon_index[6]==7){
+            context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+        }else if (btnplay_6.checkClicked() && gkicon_index[6]!=7){
+            context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+        }
+        }
+
+    /* BY-NC-ND */
+        else if (gkindex==8){
+        if(btnplay.checkClicked() && gkicon_index[0]==8){
+            context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+        }else if (btnplay.checkClicked() && gkicon_index[0]!=8){
+            context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+        }
+        else if (btnplay_1.checkClicked() && gkicon_index[1]==8){
+            context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+        }else if (btnplay_1.checkClicked() && gkicon_index[1]!=8){
+            context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+        }
+        else if (btnplay_2.checkClicked() && gkicon_index[2]==8){
+            context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+        }else if (btnplay_2.checkClicked() && gkicon_index[2]!=8){
+            context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+        }
+        else if (btnplay_3.checkClicked() && gkicon_index[3]==8){
+            context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+        }else if (btnplay_3.checkClicked() && gkicon_index[3]!=8){
+            context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+        }
+        else if (btnplay_4.checkClicked() && gkicon_index[4]==8){
+            context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+        }else if (btnplay_4.checkClicked() && gkicon_index[4]!=8){
+            context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+        }
+        else if (btnplay_5.checkClicked() && gkicon_index[5]==8){
+            context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+        }else if (btnplay_5.checkClicked() && gkicon_index[5]!=8){
+            context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+        }
+        else if (btnplay_6.checkClicked() && gkicon_index[6]==8){
+            context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+        }else if (btnplay_6.checkClicked() && gkicon_index[6]!=8){
+            context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+        }
+        }
+
+    /* BY-NC-SA*/
+        else if (gkindex==9){
+        if(btnplay.checkClicked() && gkicon_index[0]==9){
+            context.drawImage(imageObj[8][1], 55, 422, 25, 25);
+        }else if (btnplay.checkClicked() && gkicon_index[0]!=9){
+            context.drawImage(imageObj[8][2], 55, 422, 25, 25);
+        }
+        else if (btnplay_1.checkClicked() && gkicon_index[1]==9){
+            context.drawImage(imageObj[8][1], 165, 422, 25, 25);
+        }else if (btnplay_1.checkClicked() && gkicon_index[1]!=9){
+            context.drawImage(imageObj[8][2], 165, 422, 25, 25);
+        }
+        else if (btnplay_2.checkClicked() && gkicon_index[2]==9){
+            context.drawImage(imageObj[8][1], 275, 422, 25, 25);
+        }else if (btnplay_2.checkClicked() && gkicon_index[2]!=9){
+            context.drawImage(imageObj[8][2], 275, 422, 25, 25);
+        }
+        else if (btnplay_3.checkClicked() && gkicon_index[3]==9){
+            context.drawImage(imageObj[8][1], 385, 422, 25, 25);
+        }else if (btnplay_3.checkClicked() && gkicon_index[3]!=9){
+            context.drawImage(imageObj[8][2], 385, 422, 25, 25);
+        }
+        else if (btnplay_4.checkClicked() && gkicon_index[4]==9){
+            context.drawImage(imageObj[8][1], 495, 422, 25, 25);
+        }else if (btnplay_4.checkClicked() && gkicon_index[4]!=9){
+            context.drawImage(imageObj[8][2], 495, 422, 25, 25);
+        }
+        else if (btnplay_5.checkClicked() && gkicon_index[5]==9){
+            context.drawImage(imageObj[8][1], 605, 422, 25, 25);
+        }else if (btnplay_5.checkClicked() && gkicon_index[5]!=9){
+            context.drawImage(imageObj[8][2], 605, 422, 25, 25);
+        }
+        else if (btnplay_6.checkClicked() && gkicon_index[6]==9){
+            context.drawImage(imageObj[8][1], 715, 422, 25, 25);
+        }else if (btnplay_6.checkClicked() && gkicon_index[6]!=9){
+            context.drawImage(imageObj[8][2], 715, 422, 25, 25);
+        }
+        }
+}
 
     //Klick von Soundsbutton
     $('#sound').click(function(){
@@ -606,6 +1058,18 @@ $(document).ready(function() {
         $('#id_einleitung').addClass("rueckseite"); 
         $('#container_grün').fadeIn();   
     });    
+
+    //Klick Home
+    $('#home').click(function(){
+        context.clearRect(10, 11, 840, 520);
+        $('#main_canvas').addClass("canvas_style");
+        $('#container_grün').fadeIn();
+        document.getElementById("home").style.display = "none";
+        $('#level').addClass("disabled_1");
+        $('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        $('#kartenstapel').addClass("displaynone");
+        $('#kartenstapel_2').addClass("displaynone");
+    });
 });
 
 preloader();
@@ -626,3 +1090,4 @@ function Button(xL, xR, yT, yB) {
 Button.prototype.checkClicked=function() {
     if (this.xLeft <= canvas_x && canvas_x <= this.xRight && this.yTop <=canvas_y && canvas_y <= this.yBottom) {return true;}
 }
+
