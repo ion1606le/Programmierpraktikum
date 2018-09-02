@@ -20,6 +20,7 @@
 	<div id="container_grau" class="grau_container" >
 		<button id="hilfe" type="button" class="recht fa fa-question-circle fa-3x"></button>
 		<button id="sound" type="button" class="recht sound_icon fa fa-volume-off fa-3x"></button>
+		<button id="home" type="button" class="recht fa fa-home fa-3x" style="display: none;" ></button>
 		<div id="id_einleitung" class="hilfeseite rueckseite" >
 			<h1>Einleitung</h1>
 			<p>
@@ -61,8 +62,8 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 			</div>
 		</div>
 		<div id="container_grün" class="grün_container">
-			<button id="start" type="button" class="button start displaynone">
-				<i class="fa fa-play" aria-hidden="true"></i> Start
+			<button id="tutorial" type="button" class="button tutorial">
+				<i class="fa fa-graduation-cap" aria-hidden="true"></i> Tutorial
 			</button>
 			<button id="neustart" type="button" class="button neustart">
 				<i class="fa fa-play" aria-hidden="true"></i> Neustart
@@ -75,8 +76,11 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 			</button>
 		</div>
 		<canvas  id="main_canvas" width="860" height="540" class="canvas_style" >Leider unterstützt dieser Browser &lt;canvas&gt; nicht, deshald kann das Spiel nicht ausgeführt werden!</canvas>
-		<div id="kartenstapel">
+		<div id="kartenstapel" class="kartenstapel displaynone">
 			<i id="k_play" class="" aria-hidden="true"></i>
+		</div>
+		<div id="kartenstapel_2"  class="kartenstapel displaynone">
+			<i id="k_play_2" class="" aria-hidden="true"></i>
 		</div>
 		<p id="level" class="disabled_1">LEVEL 2</p>
 	</div>
