@@ -12,95 +12,133 @@
 		<script src="prefixfree.min.js"></script> <!--Präfixfree für CSS-->
 		<link type="text/css" href="stylesheet.css" rel="stylesheet" />
 	</head>
-	<body>	
-		<!--Das Spielcode--> 
+	<body>		
 		<audio id="myAudio" loop>
 			<source src="audio/bsp.mp3" type="audio/mpeg" >
 		</audio>
-	<div id="container_grau" class="grau_container" >
-		<button id="hilfe" type="button" class="recht fa fa-question-circle fa-3x"></button>
-		<button id="sound" type="button" class="recht sound_icon fa fa-volume-off fa-3x"></button>
-		<button id="home" type="button" class="recht fa fa-home fa-3x" style="display: none;" ></button>
-		<div id="id_einleitung" class="hilfeseite rueckseite" >
-			<h1>Einleitung</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+	<div id="main_gitter" class="gitter">
+		<div id="container_grau" class="grau_container" >
+			<div id="id_einleitung" class="hilfeseite rueckseite" >
+				<h1>Einleitung</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-			</p>
-			<div class="menu_hilfe">
-				<a id="einleitung_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+		Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+				</p>
+				<div class="menu_hilfe">
+					<a id="einleitung_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+				</div>
 			</div>
-		</div>
-		<div id="id_hilfeseite_1" class="hilfeseite rueckseite">
-			<h1>Creative Commons</h1>
-			<h2>Die Rechtemodule:</h2>	
-			<p> <img src="images/cc_Icon/by.png" alt="BY" class="iconclass">&ensp;<b>BY</b>-Der Name des Urhebers muss genannt werden.</p>
-			<p> <img src="images/cc_Icon/nc.png" alt="NC" class="iconclass">&ensp;<b>NC</b>-Das Werk darf nicht für kommerzielle Zwecke verwendet werden.</p>
-			<p> <img src="images/cc_Icon/ND.png" alt="ND" class="iconclass">&ensp;<b>ND</b>-Das Werk darf nicht verändert werden.</p>
-			<p> <img src="images/cc_Icon/sa.png" alt="SA" class="iconclass">&ensp;<b>SA</b>-Das Werk muss nach Veränderungen unter der gleichen Lizenz weitergegeben werden.</p>
-			<div class="menu_hilfe">
-				<a id="a1_links" href="#" class="a_links disabled"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
-				<a id="a1_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
-				<a id="a1_rechts" href="#" class="a_rechts"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
-			</div> 
-		</div>
-		<div id="id_hilfeseite_2" class="hilfeseite rueckseite">
-			<h1>Creative Commons</h1>
-			<h2>Die aktuellen Lizenzen:</h2>
-			<p><img src="images/cc_Icon/cc0.png" alt="CC0" class="iconclass_2el">&ensp;<b>CC0</b>-Kein Copyright wenn möglich. No Copyright!</p>
-			<p><img src="images/cc_Icon/cc-by-hilfe.png" alt="BY" class="iconclass_2el">&ensp;<b>BY</b>-Namensnennung.</p>
-			<p><img src="images/cc_Icon/cc-by-nd-hilfe.png" alt="BY-ND" class="iconclass_3el">&ensp;<b>BY-ND</b>-Namensnennung, keine Bearbeitung.</p>
-			<p><img src="images/cc_Icon/cc-by-sa-hilfe.png" alt="BY-SA" class="iconclass_3el">&ensp;<b>BY-SA</b>-Namensnennung, Weitergabe unter gleichen Bedingungen.</p>
-			<p><img src="images/cc_Icon/cc-by-nc-hilfe.png" alt="BY-NC" class="iconclass_3el">&ensp;<b>BY-NC</b>-Namensnennung, nicht kommerziell.</p>
-			<p><img src="images/cc_Icon/cc-by-nc-sa-hilfe.png" alt="BY-NC-SA" class="iconclass_4el">&ensp;<b>BY-NC-SA</b>-Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen.</p>
-			<p><img src="images/cc_Icon/cc-by-nc-nd-hilfe.png" alt="BY-NC-ND" class="iconclass_4el">&ensp;<b>BY-NC-ND</b>-Namensnennung, nicht kommerziell, keine Bearbeitung.</p>
-			<div class="menu_hilfe">
-			<a id="a2_links" href="#" class="a_links"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
-			<a id="a2_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
-			<a id="a2_rechts" href="#" class="a_rechts disabled"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
-			</div>
-		</div>
-		<div id="container_grün" class="grün_container">
-			<button id="tutorial" type="button" class="button tutorial">
-				<i class="fa fa-graduation-cap" aria-hidden="true"></i> Tutorial
-			</button>
-			<button id="neustart" type="button" class="button neustart">
-				<i class="fa fa-play" aria-hidden="true"></i> Neustart
-			</button>
-			<button id="fortsetzen" type="button" class="button disabled fortsetzen">
-				<i class="fa fa-play-circle" aria-hidden="true"></i> Fortsetzen
-			</button>
-			<button id="einleitung" type="button" class="button einleitung">
-					<i class="fa fa-info-circle" aria-hidden="true"></i> Einleitung
-			</button>
-		</div>
-		<canvas  id="main_canvas" width="860" height="540" class="canvas_style" >Leider unterstützt dieser Browser &lt;canvas&gt; nicht, deshald kann das Spiel nicht ausgeführt werden!</canvas>
-		<div id="kartenstapel" class="kartenstapel displaynone">
-			<i id="k_play" class="" aria-hidden="true"></i>
-		</div>
-		<div id="kartenstapel_2"  class="kartenstapel displaynone">
-			<i id="k_play_2" class="" aria-hidden="true"></i>
-		</div>
-		<p id="level" class="disabled_1">LEVEL 2</p>
-	</div>
-	<noscript> <!-- Definiere die Seite ohne JavaScript. Der Inhalt des noscript-Elements wird angezeigt, wenn in einem Kontext Javascript deaktiviert ist. -->
-		<div> 
-			<div id="no-script"> 	
-				<div class="no-script-message"> 
-					<div> 
-						In Ihrem Browser ist JavaScript deaktiviert. 	
-					</div> 
-					<a class="no-script-help-link" href="https://java.com/de/download/help/enable_browser.xml" target="_self">
-					Um diese Seite verwenden zu können, muss JavaScript aktiviert sein.
-					</a>
+			<div id="id_hilfeseite_1" class="hilfeseite rueckseite">
+				<h1>Creative Commons</h1>
+				<h2>Die Rechtemodule:</h2>	
+				<p> <img src="images/cc_Icon/by.png" alt="BY" class="iconclass">&ensp;<b>BY</b>-Der Name des Urhebers muss genannt werden.</p>
+				<p> <img src="images/cc_Icon/nc.png" alt="NC" class="iconclass">&ensp;<b>NC</b>-Das Werk darf nicht für kommerzielle Zwecke verwendet werden.</p>
+				<p> <img src="images/cc_Icon/ND.png" alt="ND" class="iconclass">&ensp;<b>ND</b>-Das Werk darf nicht verändert werden.</p>
+				<p> <img src="images/cc_Icon/sa.png" alt="SA" class="iconclass">&ensp;<b>SA</b>-Das Werk muss nach Veränderungen unter der gleichen Lizenz weitergegeben werden.</p>
+				<div class="menu_hilfe">
+					<a id="a1_links" href="#" class="a_links disabled"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+					<a id="a1_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+					<a id="a1_rechts" href="#" class="a_rechts"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
 				</div> 
+			</div>
+			<div id="id_hilfeseite_2" class="hilfeseite rueckseite">
+				<h1>Creative Commons</h1>
+				<h2>Die aktuellen Lizenzen:</h2>
+				<p><img src="images/cc_Icon/cc0.png" alt="CC0" class="iconclass_2el">&ensp;<b>CC0</b>-Kein Copyright wenn möglich. No Copyright!</p>
+				<p><img src="images/cc_Icon/cc-by-hilfe.png" alt="BY" class="iconclass_2el">&ensp;<b>BY</b>-Namensnennung.</p>
+				<p><img src="images/cc_Icon/cc-by-nd-hilfe.png" alt="BY-ND" class="iconclass_3el">&ensp;<b>BY-ND</b>-Namensnennung, keine Bearbeitung.</p>
+				<p><img src="images/cc_Icon/cc-by-sa-hilfe.png" alt="BY-SA" class="iconclass_3el">&ensp;<b>BY-SA</b>-Namensnennung, Weitergabe unter gleichen Bedingungen.</p>
+				<p><img src="images/cc_Icon/cc-by-nc-hilfe.png" alt="BY-NC" class="iconclass_3el">&ensp;<b>BY-NC</b>-Namensnennung, nicht kommerziell.</p>
+				<p><img src="images/cc_Icon/cc-by-nc-sa-hilfe.png" alt="BY-NC-SA" class="iconclass_4el">&ensp;<b>BY-NC-SA</b>-Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen.</p>
+				<p><img src="images/cc_Icon/cc-by-nc-nd-hilfe.png" alt="BY-NC-ND" class="iconclass_4el">&ensp;<b>BY-NC-ND</b>-Namensnennung, nicht kommerziell, keine Bearbeitung.</p>
+				<div class="menu_hilfe">
+				<a id="a2_links" href="#" class="a_links"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+				<a id="a2_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+				<a id="a2_rechts" href="#" class="a_rechts disabled"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
+				</div>
 			</div> 
-		</div>
-	</noscript>	
+			<div id="main_div" class="main_divstyle">
+				<div id="level_container" class="grün_container displaynone">
+					<button id="level_1" type="button" class="button_style">Level 1</button>
+					<button id="level_2" type="button" class="button_style">Level 2</button>
+				</div>
+				<div id="container_grün" class="grün_container">
+					<button id="neustart" type="button" class="button_style neustart">
+						<i class="fa fa-play" aria-hidden="true"></i> Neustart
+					</button>
+					<button id="fortsetzen" type="button" class="button_style disabled fortsetzen">
+						<i class="fa fa-play-circle" aria-hidden="true"></i> Fortsetzen
+					</button>
+					<button id="einleitung" type="button" class="button_style einleitung">
+							<i class="fa fa-info-circle" aria-hidden="true"></i> Einleitung
+					</button>
+				</div> 
+			</div>
+			<div id="main_div1" class="main_div1style displaynone">
+				<div id="level1_karte"><img alt=""></div>
+				<div id="level1_antwort" class="antwort">
+					<div id="antwort_11" class="antwort_button"><img alt=""></div>
+					<div id="antwort_21" class="antwort_button"><img alt=""></div>
+					<div id="antwort_31" class="antwort_button"><img alt=""></div>
+					<div id="antwort_41" class="antwort_button"><img alt=""></div>
+					<div id="antwort_51" class="antwort_button"><img alt=""></div>
+					<div id="antwort_61" class="antwort_button"><img alt=""></div>
+					<div id="antwort_71" class="antwort_button"><img alt=""></div>
+				</div>		
+			</div>
+			<div id="main_div2" class="main_div1style displaynone">
+				<p id="score"></p>
+				<div id="level2_karte1"><img alt=""></div>
+				<div id="level2_karte2"><img alt=""></div>
+				<div id="level2_antwort" class="antwort">
+					<div id="antwort_1" class="antwort_button" data-antwortkey="0"><img alt=""></div>
+					<div id="antwort_2" class="antwort_button" data-antwortkey="1"><img alt=""></div>
+					<div id="antwort_3" class="antwort_button" data-antwortkey="2"><img alt=""></div>
+					<div id="antwort_4" class="antwort_button" data-antwortkey="3"><img alt=""></div>
+					<div id="antwort_5" class="antwort_button" data-antwortkey="4"><img alt=""></div>
+					<div id="antwort_6" class="antwort_button" data-antwortkey="5"><img alt=""></div>
+					<div id="antwort_7" class="antwort_button" data-antwortkey="6"><img alt=""></div>
+				</div>
+			</div>
+			<div id="rechts_div">
+				<button id="hilfe" type="button" class="recht fa fa-question-circle fa-3x"></button>
+				<button id="sound" type="button" class="recht sound_icon fa fa-volume-off fa-3x"></button>
+				<button id="home" type="button" class="recht fa fa-home fa-3x" style="display: none;"></button> 
+				<div id="kartenstapel" class="kartenstapel_style displaynone">
+					<i id="k_play" class="kartenstapel_play" aria-hidden="true"></i>
+				</div>
+				<div id="kartenstapel_check" class="kartenstapel_style displaynone">
+					<i class="fa fa-search fa-3x" aria-hidden="true"></i>
+				</div>
+				<p id="kartenstapel_text" class="displaynone">Level 1</p>
+				<div id="kartenstapel_2"  class="kartenstapel_style displaynone">
+					<i id="k_play_2" class="" aria-hidden="true"></i>
+				</div>
+				<div id="kartenstapel_2check" class="kartenstapel_style displaynone">
+					<i class="fa fa-search fa-3x" aria-hidden="true"></i>
+				</div>
+				<p id="kartenstapel_2text" class="displaynone">Level 2</p>
+			</div>
 
-	<footer>
-		<a href="impressum.html">Impressum</a>
+		</div>
+		<noscript> Definiere die Seite ohne JavaScript. Der Inhalt des noscript-Elements wird angezeigt, wenn in einem Kontext Javascript deaktiviert ist. 
+			<div> 
+				<div id="no-script"> 	
+					<div class="no-script-message"> 
+						<div> 
+							In Ihrem Browser ist JavaScript deaktiviert. 	
+						</div> 
+						<a class="no-script-help-link" href="https://java.com/de/download/help/enable_browser.xml" target="_self">
+						Um diese Seite verwenden zu können, muss JavaScript aktiviert sein.
+						</a>
+					</div> 
+				</div> 
+			</div>
+		</noscript>	
+	</div>	
+	<footer >
+			<a href="lizenz.md">Lizenz</a>
 	</footer>
 	</body>
 </html>
