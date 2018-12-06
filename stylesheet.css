@@ -4,12 +4,15 @@ body {
 	background-repeat: inherit;
 	background-size: contain;
 	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
 	
 }
 
 .gitter {
 	margin: 10px auto;
-	max-width: 75em;
+	max-width: 70em;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
 }
@@ -152,12 +155,17 @@ h1 {
     text-align: center;
 }
 
-h2 {
+wbr {
+	text-indent: 2em;
+}
+h2, h3{
     text-indent: 2em;
 }
-#id_einleitung>p, #id_hilfeseite_1>p, #id_hilfeseite_2>p {
-    text-indent: 4em;
-    
+#id_hilfeseite_1>p, #id_hilfeseite_2>p {
+    text-indent: 4em;  
+}
+#id_einleitung>p {
+	text-indent: 2em;
 }
 
 .iconclass {
@@ -184,13 +192,21 @@ h2 {
     vertical-align: -10px;
 } 
 
-#score {
+#score1, #score2 {
 	font-size: 24px;
-	grid-area: 2 / 5 / span 1 / span 1;
+	grid-area: 1 / 5 / span 1 / span 1;
 	justify-self: center;
 	color: mintcream;
+	align-self: end;
 }
 
+#frage {
+	grid-area: 1 / 2 / span 2 / span 3;
+	font-size: 43px;
+	color: mintcream;
+	align-self: center;
+	justify-self: center;
+}
 .menu_hilfe{
     background: #E6F3CD;
     border: 3px solid #99CC33;
@@ -303,18 +319,18 @@ h2 {
 /*Karten Style*/
 
 #level2_karte1 {
-	grid-area: 2 / 2 / 3 / 3;
+	grid-area: 2 / 2 / 4 / 3;
 	align-self: end;
 }
 
 #level2_karte2 {
-	grid-area: 2 / 4 / 3 / 5;
+	grid-area: 2 / 4 / 4 / 5;
 	align-self: end;
 		
 }
 
 #level1_karte {
-	grid-area: 2 / 3 / 3 / 4;
+	grid-area: 2 / 3 / 4 / 4;
 	align-self: end;
 }
 
@@ -338,6 +354,10 @@ h2 {
 	width: 100%;
 }
 
+#kartenstapel_check>p, #kartenstapel_2check>p {
+	font-size: 21px;
+	font-weight: bolder;
+}
 .antwort_button {
 	flex: auto;
 	border: 5px solid transparent;
@@ -348,21 +368,27 @@ h2 {
 }
 
 .antwort_richtig {
-	border: 5px solid #99CC33;
+	border: 5px solid rgb(95, 141, 2);
 }
 
 .antwort_falsch {
-	border: 5px solid red;
+	border: 5px solid #9C0000;
 }
 
 footer {
-	display: flex;   
-    border-radius: 0px 0.5em 0.5em;
+	display: grid; 
+	grid-template-columns: 1fr 1fr 1fr 1fr 20px;
+    border-radius: 0.5em 0.5em;
 	border: 1px solid;
     background: #e4ebf2;
     border-color: #8a9da8;
     height: 30px;
-	justify-content: end;
+}
+
+#lizenz {
+	grid-column-start: 4;
+	justify-self: end;
+	align-self: center;
 }
 
 @media (max-width: 810px) or (max-height: 490px)

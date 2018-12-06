@@ -21,9 +21,14 @@
 			<div id="id_einleitung" class="hilfeseite rueckseite" >
 				<h1>Einleitung</h1>
 				<p>
-					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-		Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+					<h3>Das OER-Kartenspiel</h3><p>ist ein Spiel, womit man die richtige Kombination von <b><i>Creative Commons</i></b> Lizenzen lernen kann. Das Spiel besteht aus zwei Levels. In dem ersten Level lernt man die Lizenzen kennen.
+				In dem zweiten Level lernt man die richtige Kombination von jeweils zwei Lizenzen.</p>
+					<p>In dem zweiten Level soll man  die richtige Antworten wählen, indem man auf den unten stehenden Icons drückt.</p>
+				 	<p>Die gewählte Antworten werden mit grau markiert.</p>
+				 	<p>Mit dem Druck auf <i>Check it!</i> kann man prüfen, ob die gewählte Antworten richtig oder falsch waren.</p>
+					<p>Die richtige Antworten werden mit <font color="#008000">grün</font> markiert!</p>
+					<p>Die falsche Anworten werden mit <font color="#9C0000">rot</font> markiert!</p>
+					<p>Die richtige Antworten, die nicht gewählt wurden, werden auch mit <font color="#9C0000">rot</font> markiert!</p>
 				</p>
 				<div class="menu_hilfe">
 					<a id="einleitung_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
@@ -76,19 +81,21 @@
 				</div> 
 			</div>
 			<div id="main_div1" class="main_div1style displaynone">
+				<p id="score1"></p>
 				<div id="level1_karte"><img alt=""></div>
 				<div id="level1_antwort" class="antwort">
-					<div id="antwort_11" class="antwort_button"><img alt=""></div>
-					<div id="antwort_21" class="antwort_button"><img alt=""></div>
-					<div id="antwort_31" class="antwort_button"><img alt=""></div>
-					<div id="antwort_41" class="antwort_button"><img alt=""></div>
-					<div id="antwort_51" class="antwort_button"><img alt=""></div>
-					<div id="antwort_61" class="antwort_button"><img alt=""></div>
-					<div id="antwort_71" class="antwort_button"><img alt=""></div>
+					<div id="antwort_11" class="antwort_button" data-antwortkey="0"><img alt=""></div>
+					<div id="antwort_21" class="antwort_button" data-antwortkey="1"><img alt=""></div>
+					<div id="antwort_31" class="antwort_button" data-antwortkey="2"><img alt=""></div>
+					<div id="antwort_41" class="antwort_button" data-antwortkey="3"><img alt=""></div>
+					<div id="antwort_51" class="antwort_button" data-antwortkey="4"><img alt=""></div>
+					<div id="antwort_61" class="antwort_button" data-antwortkey="5"><img alt=""></div>
+					<div id="antwort_71" class="antwort_button" data-antwortkey="6"><img alt=""></div>
 				</div>		
 			</div>
 			<div id="main_div2" class="main_div1style displaynone">
-				<p id="score"></p>
+				<p id="score2"></p>
+				<p id="frage" class="displaynone"><b>Welche <i>CC</i> Kombination?</b></p>
 				<div id="level2_karte1"><img alt=""></div>
 				<div id="level2_karte2"><img alt=""></div>
 				<div id="level2_antwort" class="antwort">
@@ -109,14 +116,14 @@
 					<i id="k_play" class="kartenstapel_play" aria-hidden="true"></i>
 				</div>
 				<div id="kartenstapel_check" class="kartenstapel_style displaynone">
-					<i class="fa fa-search fa-3x" aria-hidden="true"></i>
+					<p>Check it!</p>
 				</div>
 				<p id="kartenstapel_text" class="displaynone">Level 1</p>
 				<div id="kartenstapel_2"  class="kartenstapel_style displaynone">
 					<i id="k_play_2" class="" aria-hidden="true"></i>
 				</div>
 				<div id="kartenstapel_2check" class="kartenstapel_style displaynone">
-					<i class="fa fa-search fa-3x" aria-hidden="true"></i>
+					<p>Check it!</p>
 				</div>
 				<p id="kartenstapel_2text" class="displaynone">Level 2</p>
 			</div>
@@ -138,7 +145,7 @@
 		</noscript>	
 	</div>	
 	<footer >
-			<a href="lizenz.md">Lizenz</a>
+		<a id="lizenz" href="LICENSE">Lizenz</a>
 	</footer>
 	</body>
 </html>

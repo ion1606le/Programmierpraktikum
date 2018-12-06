@@ -32,11 +32,9 @@ function preloader(){
 $(document).ready(function() {
     var playing=false;
     var min=0;
-    var min_1=1;
     var max_1=14;
     var max_2=6;
     var max_3=9;
-    //var max_4=7;
     var score=0;
     var gindex_1=0;
     var gindex_2=0;
@@ -46,6 +44,20 @@ $(document).ready(function() {
     var gkicon_index=[];
 	
 	//Richtige Antworten:
+	//Level 1
+	var antwort_1 =[];
+	antwort_1[0]=[];
+	antwort_1[0][0]=[0];
+	antwort_1[0][1]=[1];
+	antwort_1[0][2]=[2];
+	antwort_1[0][3]=[3];
+	antwort_1[0][4]=[4];
+	antwort_1[0][5]=[5];
+	antwort_1[0][6]=[6];
+	antwort_1[0][7]=[7];
+	antwort_1[0][8]=[8];
+	antwort_1[0][9]=[9];
+	//Level 2
 	var antwort = [];
 	antwort[0]=[];
 	//Zero
@@ -111,30 +123,9 @@ $(document).ready(function() {
 	antwort[6][5]=[];
 	antwort[6][6]=[6];
 	
-	
 	var ang_karte = [];
 	var ang_lizenz=[];
-	
-	/*$('.antwort_checked').each(function(){
-		var datakey = $(this).data('antwortkey');
 		
-		//ang_karte.push(element.data('antwortkey'));
-		ang_karte.push(datakey);
-		ang_lizenz.push(gicon_index[$(this).data('antwortkey')]);
-		
-	});
-	antwort[gindex_1][gindex_2].forEach(function(element){
-		if (ang_lizenz.includes(element)) {
-			// punkt
-		} else {
-			// minuspunkt
-		}
-	});*/
-    
-	
-	
-	
-	
 	if (localStorage.getItem('INDEX_1')!=null)
     {
         $('#fortsetzen').removeClass("disabled");
@@ -166,44 +157,37 @@ $(document).ready(function() {
 	    $('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
         $('#kartenstapel_2').removeClass("displaynone");
 		$('#kartenstapel_2text').removeClass("displaynone");
+		
 	});
     
 	// Fortsetzenbutton Click
     $('#fortsetzen').click(function(){
-        $(this).parent().fadeOut();
-        var index_1_1 = JSON.parse(localStorage.getItem('INDEX_1'));
+		var index_1_1 = JSON.parse(localStorage.getItem('INDEX_1'));
         var index_2_2 = JSON.parse(localStorage.getItem('INDEX_2'));
         var i_1 = JSON.parse(localStorage.getItem('I'));
         var j_1 = JSON.parse(localStorage.getItem('J'));
         var score_1 = JSON.parse(localStorage.getItem('SCORE'));
         score=score_1;
         var icon_index_1 = JSON.parse(localStorage.getItem('ICON_INDEX'));
-        $('#level').toggleClass("disabled_1");
-        $('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
-        $('#kartenstapel').removeClass("displaynone");
-        $('#kartenstapel_2').addClass("displaynone");
-        document.getElementById("home").style.display = "block";
-
-        //Hintergrung bzw. Tafel
-        context.drawImage(imageObj[9][0], 10, 11, 840, 520);
-        //Score
-        context.font="20px Georgia";
-        context.fillStyle="white";
-        context.fillText("Score: " + score_1,740,50);
+		
+        $('#container_grün').toggleClass("displaynone");
+		$('#main_div2').toggleClass("displaynone");
+		document.getElementById("home").style.display = "block";
+		$('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        $('#kartenstapel_2').removeClass("displaynone");
+		$('#kartenstapel_2text').removeClass("displaynone");
+      
         //Karte 1 und 2
-        context.drawImage(imageObj[index_1_1][i_1], 140, 60, 213, 320);
-        context.drawImage(imageObj[index_2_2][j_1], 470, 60, 213, 320);
+		$('#level2_karte1>img').attr({src:imageObj[index_1_1][i_1].src});
+		$('#level2_karte2>img').attr({src:imageObj[index_2_2][j_1].src});
         //Antworten
-        context.drawImage(imageObj[7][icon_index_1[0]], 50, 450, 100, 32);
-        context.drawImage(imageObj[7][icon_index_1[1]], 160, 450, 100, 32);
-        context.drawImage(imageObj[7][icon_index_1[2]], 270, 450, 100, 32);
-        context.drawImage(imageObj[7][icon_index_1[3]], 380, 450, 100, 32);
-        context.drawImage(imageObj[7][icon_index_1[4]], 490, 450, 100, 32);
-        context.drawImage(imageObj[7][icon_index_1[5]], 600, 450, 100, 32);
-        context.drawImage(imageObj[7][icon_index_1[6]], 710, 450, 100, 32);
-
-        
-
+		$('#antwort_1>img').attr({src:imageObj[7][icon_index_1[0]].src});
+		$('#antwort_2>img').attr({src:imageObj[7][icon_index_1[1]].src});
+		$('#antwort_3>img').attr({src:imageObj[7][icon_index_1[2]].src});
+		$('#antwort_4>img').attr({src:imageObj[7][icon_index_1[3]].src});
+		$('#antwort_5>img').attr({src:imageObj[7][icon_index_1[4]].src});
+		$('#antwort_6>img').attr({src:imageObj[7][icon_index_1[5]].src});
+		$('#antwort_7>img').attr({src:imageObj[7][icon_index_1[6]].src});
     });
 
     //Kartenstapel_Tutorial Click
@@ -215,7 +199,8 @@ $(document).ready(function() {
         gkicon_index=kicon_index;
         var m=0;
         $('#k_play').removeClass("fa-play").addClass("fa-hand-o-right");
-        
+        $('#kartenstapel').toggleClass("displaynone");
+		$('#kartenstapel_check').toggleClass("displaynone");
         while (m<=6){
             var x=Math.floor(Math.random()*(max_3-min+1))+min;
             if (kicon_index.includes(x)==false && m<=6){
@@ -248,42 +233,66 @@ $(document).ready(function() {
 		$('#antwort_61>img').attr({src:imageObj[9][kicon_index[5]].src});
 		$('#antwort_71>img').attr({src:imageObj[9][kicon_index[6]].src});
 		
+		$('.antwort_falsch').removeClass('antwort_falsch');
+		$('.antwort_richtig').removeClass('antwort_richtig');
+		
+		$('#antwort_11').off('click').click(function(){
+		  $(this).toggleClass("antwort_checked");
+	  });
+		$('#antwort_21').off('click').click(function(){
+		  $(this).toggleClass("antwort_checked");
+	  });
+		$('#antwort_31').off('click').click(function(){
+		  $(this).toggleClass("antwort_checked");
+	  });
+		$('#antwort_41').off('click').click(function(){
+		  $(this).toggleClass("antwort_checked");
+	  });
+		$('#antwort_51').off('click').click(function(){
+		  $(this).toggleClass("antwort_checked");
+	  });
+		$('#antwort_61').off('click').click(function(){
+		  $(this).toggleClass("antwort_checked");
+	  });
+		$('#antwort_71').off('click').click(function(){
+		  $(this).toggleClass("antwort_checked");
+	  });
+		
     });
 	
-	$('#kartenstapel_2check').click(function(){
-		$('#kartenstapel_2').toggleClass("displaynone");
-		$('#kartenstapel_2check').toggleClass("displaynone");
+	$('#kartenstapel_check').click(function(){
+		$('#kartenstapel').toggleClass("displaynone");
+		$('#kartenstapel_check').toggleClass("displaynone");
 		$('.antwort_checked').each(function(){
 			var datakey = $(this).data('antwortkey');
 			ang_karte.push(datakey);
-			ang_lizenz.push(gicon_index[$(this).data('antwortkey')]);
-			//$(this).toggleClass("antwort_checked");
-		  
+			ang_lizenz.push(gkicon_index[$(this).data('antwortkey')]);
 		});
 		
-		
-		antwort[gindex_1][gindex_2].forEach(function(element){
+		antwort_1[0][gkindex].forEach(function(element){
 			var ang_key = ang_lizenz.findIndex(function(value){return value === element;});
-		if (ang_key !== -1) {
-			$('#level2_antwort').find('.antwort_button:nth-child('+(ang_karte[ang_key]+1)+')').addClass("antwort_richtig").removeClass("antwort_checked");
-			score++;
-		} else {
-			$('#level2_antwort').find('.antwort_button:nth-child('+(gicon_index.findIndex(function(value){
-				return value==element;
-			})+1)+')').addClass("antwort_falsch");
-			score--;
-		}
+			if (ang_key !== -1) {
+				$('#level1_antwort').find('.antwort_button:nth-child('+(ang_karte[ang_key]+1)+')').addClass("antwort_richtig").removeClass("antwort_checked");
+				score++;
+			} else {
+				$('#level1_antwort').find('.antwort_button:nth-child('+(gkicon_index.findIndex(function(value){
+					return value==element;
+				})+1)+')').addClass("antwort_falsch");
+				score--;
+			}
 		});
-		$('#level2_antwort').find('.antwort_checked').each(function(){
+		$('#level1_antwort').find('.antwort_checked').each(function(){
 			score--;
 			$(this).addClass("antwort_falsch").removeClass("antwort_checked");
 		});
 		ang_karte.splice(0, ang_karte.length);
 		ang_lizenz.splice(0, ang_lizenz.length);
+		var ausgabe=document.getElementById("score1");
 		var ergebnis=('Score: '+score);
-		ausgabe(ergebnis);
+		ausgabe.innerHTML=ergebnis;
 		
-	})
+	});
+	
 
     //Kartenstappel Click
     $('#kartenstapel_2').click(function(){
@@ -299,7 +308,7 @@ $(document).ready(function() {
         $('#k_play_2').removeClass("fa-play").addClass("fa-hand-o-right");
 		$('#kartenstapel_2').toggleClass("displaynone");
 		$('#kartenstapel_2check').toggleClass("displaynone");
-        
+        $('#frage').removeClass("displaynone");
         while (m<=6){
                 var x=Math.floor(Math.random()*(max_2-min+1))+min;
                 if (icon_index.includes(x)==false && m<=6){
@@ -349,14 +358,12 @@ $(document).ready(function() {
 		  $(this).toggleClass("antwort_checked");
 	  });
 		
-		/*pruefe_1.splice(0, pruefe_1.length);
-		pruefe_2.splice(0, pruefe_2.length);
-       /* localStorage.setItem('INDEX_1', JSON.stringify(index_1));
+		localStorage.setItem('INDEX_1', JSON.stringify(index_1));
         localStorage.setItem('INDEX_2', JSON.stringify(index_2));
         localStorage.setItem('I', JSON.stringify(i));
         localStorage.setItem('J', JSON.stringify(j));
         localStorage.setItem('SCORE', JSON.stringify(score));
-        localStorage.setItem('ICON_INDEX', JSON.stringify(icon_index));*/
+        localStorage.setItem('ICON_INDEX', JSON.stringify(icon_index));
     });
 	
     
@@ -367,10 +374,7 @@ $(document).ready(function() {
 			var datakey = $(this).data('antwortkey');
 			ang_karte.push(datakey);
 			ang_lizenz.push(gicon_index[$(this).data('antwortkey')]);
-			//$(this).toggleClass("antwort_checked");
-		  
 		});
-		
 		
 		antwort[gindex_1][gindex_2].forEach(function(element){
 			var ang_key = ang_lizenz.findIndex(function(value){return value === element;});
@@ -390,16 +394,12 @@ $(document).ready(function() {
 		});
 		ang_karte.splice(0, ang_karte.length);
 		ang_lizenz.splice(0, ang_lizenz.length);
+		var ausgabe=document.getElementById("score2");
 		var ergebnis=('Score: '+score);
-		ausgabe(ergebnis);
+		ausgabe.innerHTML=ergebnis;
 		
-	})
+	});
 	
-	function ausgabe(text) {
-		var ausgabe=document.getElementById('score');
-		ausgabe.innerHTML=text;
-	}
-
     //Klick von Soundsbutton
     $('#sound').click(function(){
         $("#sound").toggleClass("sound_icon fa fa-volume-off sound_icon1 fa fa-volume-up");
@@ -458,6 +458,7 @@ $(document).ready(function() {
 		$('#kartenstapel_text').addClass("displaynone");
         $('#kartenstapel_2').addClass("displaynone");
 		$('#kartenstapel_2text').addClass("displaynone");
+		$('#frage').addClass("displaynone");
 		
     });
 });
