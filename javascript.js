@@ -198,7 +198,6 @@ $(document).ready(function() {
         var kicon_index=[];
         gkicon_index=kicon_index;
         var m=0;
-        $('#k_play').removeClass("fa-play").addClass("fa-hand-o-right");
         $('#kartenstapel').toggleClass("displaynone");
 		$('#kartenstapel_check').toggleClass("displaynone");
         while (m<=6){
@@ -305,7 +304,6 @@ $(document).ready(function() {
         var icon_index=[];
         gicon_index=icon_index;
         var m=0;
-        $('#k_play_2').removeClass("fa-play").addClass("fa-hand-o-right");
 		$('#kartenstapel_2').toggleClass("displaynone");
 		$('#kartenstapel_2check').toggleClass("displaynone");
         $('#frage').removeClass("displaynone");
@@ -453,12 +451,11 @@ $(document).ready(function() {
 		$('#main_div1').addClass("displaynone");
 		$('#container_grün').toggleClass("displaynone");
         document.getElementById("home").style.display = "none";
-        $('#k_play, #k_play_2').removeClass("kartenstapel_play fa fa-3x fa-play fa-hand-o-right");
-        $('#kartenstapel').addClass("displaynone");
-		$('#kartenstapel_text').addClass("displaynone");
-        $('#kartenstapel_2').addClass("displaynone");
-		$('#kartenstapel_2text').addClass("displaynone");
+        $('#k_play, #k_play_2').removeClass("kartenstapel_play fa fa-3x fa-play");
+        $('#kartenstapel, #kartenstapel_text, #kartenstapel_check').addClass("displaynone");
+		$('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
 		$('#frage').addClass("displaynone");
+		$
 		
     });
 });
