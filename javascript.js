@@ -134,7 +134,7 @@ $(document).ready(function() {
     // Neustartbutton Click
     $('#neustart').click(function(){
         $('#container_grün').toggleClass("displaynone");
-		$('#level_container').toggleClass("displaynone");  
+	$('#level_container').toggleClass("displaynone");  
     });
 	
 	// Level_1_button Click
@@ -144,7 +144,7 @@ $(document).ready(function() {
 		$('#main_div1').toggleClass("displaynone");
 		document.getElementById("home").style.display = "block";
 		$('#kartenstapel').removeClass("displaynone");
-        $('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        	$('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
 		$('#kartenstapel_text').removeClass("displaynone");
 	});
 
@@ -154,8 +154,8 @@ $(document).ready(function() {
 		$('#main_div').toggleClass("displaynone");
 		$('#main_div2').toggleClass("displaynone");
 		document.getElementById("home").style.display = "block";
-	    $('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
-        $('#kartenstapel_2').removeClass("displaynone");
+	    	$('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
+        	$('#kartenstapel_2').removeClass("displaynone");
 		$('#kartenstapel_2text').removeClass("displaynone");
 		
 	});
@@ -199,7 +199,7 @@ $(document).ready(function() {
         gkicon_index=kicon_index;
         var m=0;
         $('#kartenstapel').toggleClass("displaynone");
-		$('#kartenstapel_check').toggleClass("displaynone");
+	$('#kartenstapel_check').toggleClass("displaynone");
         while (m<=6){
             var x=Math.floor(Math.random()*(max_3-min+1))+min;
             if (kicon_index.includes(x)==false && m<=6){
@@ -356,7 +356,7 @@ $(document).ready(function() {
 		  $(this).toggleClass("antwort_checked");
 	  });
 		
-		localStorage.setItem('INDEX_1', JSON.stringify(index_1));
+	localStorage.setItem('INDEX_1', JSON.stringify(index_1));
         localStorage.setItem('INDEX_2', JSON.stringify(index_2));
         localStorage.setItem('I', JSON.stringify(i));
         localStorage.setItem('J', JSON.stringify(j));
@@ -425,7 +425,7 @@ $(document).ready(function() {
     $('#a1_close, #a2_close').click(function(){
         $('#id_hilfeseite_1').addClass("rueckseite"); 
         $('#id_hilfeseite_2').addClass("rueckseite");
-		$('#main_div').toggleClass("disabled_1");
+	$('#main_div').toggleClass("disabled_1");
     });
 
     $('#a2_links').click(function(){
@@ -445,17 +445,17 @@ $(document).ready(function() {
 
     //Klick Home
     $('#home').click(function(){
-		$('img').removeAttr('src');
+	$('img').removeAttr('src');
         $('#main_div').toggleClass("displaynone");
-		$('#main_div2').addClass("displaynone");
-		$('#main_div1').addClass("displaynone");
-		$('#container_grün').toggleClass("displaynone");
+	$('#main_div2').addClass("displaynone");
+	$('#main_div1').addClass("displaynone");
+	$('#container_grün').toggleClass("displaynone");
         document.getElementById("home").style.display = "none";
         $('#k_play, #k_play_2').removeClass("kartenstapel_play fa fa-3x fa-play");
         $('#kartenstapel, #kartenstapel_text, #kartenstapel_check').addClass("displaynone");
-		$('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
-		$('#frage').addClass("displaynone");
-		$
+	$('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
+	$('#frage').addClass("displaynone");
+		
 		
     });
 });
