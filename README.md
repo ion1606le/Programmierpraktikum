@@ -1,4 +1,4 @@
-# OER-Kartenspeil
+# OER-Kartenspiel
 
 Das OER-Kartenspiel ist ein Spiel, womit man die richtige Kombination von <b><i>Creative Commons</i></b> Lizenzen lernen kann.
 
