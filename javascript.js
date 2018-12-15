@@ -460,7 +460,6 @@ $(document).ready(function() {
         $('#kartenstapel, #kartenstapel_text, #kartenstapel_check').addClass("displaynone");
 		$('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
 		$('#frage').addClass("displaynone");
-		$
 		
     });
 });
