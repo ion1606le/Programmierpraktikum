@@ -18,5 +18,5 @@ z.B.: Visual Studio Code oder Notepad++
 
 ## License
 
-Der Code ist unter MIT License - siehe [LICENSE.md](LICENSE.md).
+Der Code ist unter MIT License - siehe [LICENSE](LICENSE).
 
