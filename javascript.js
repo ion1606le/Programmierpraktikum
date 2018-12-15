@@ -1,4 +1,4 @@
-//Bilder hochlade
+//Hier werden alle Bilder in eines mehrdimensionale Array hochgeladen
 function preloader(){
     var i=0;
     var j=0;
@@ -123,9 +123,10 @@ $(document).ready(function() {
 	antwort[6][5]=[];
 	antwort[6][6]=[6];
 	
+	//Arrays für gewählte Antworten und ausgegebene Lizenzen 
 	var ang_karte = [];
 	var ang_lizenz=[];
-		
+	//Der Button "Fortsetzen" wird aktiv, wenn localStorage forhanden sind
 	if (localStorage.getItem('INDEX_1')!=null)
     {
         $('#fortsetzen').removeClass("disabled");
@@ -190,7 +191,7 @@ $(document).ready(function() {
 		$('#antwort_7>img').attr({src:imageObj[7][icon_index_1[6]].src});
     });
 
-    //Kartenstapel_Tutorial Click
+    //Kartenstapel_Level_1 Click
     $('#kartenstapel').click(function(){
         var kindex=Math.floor(Math.random()*(max_3-min+1))+min;
         gkindex=kindex;
@@ -200,6 +201,7 @@ $(document).ready(function() {
         var m=0;
         $('#kartenstapel').toggleClass("displaynone");
 		$('#kartenstapel_check').toggleClass("displaynone");
+		//Es wird ein Array mit zufälligen Zahlen generiert
         while (m<=6){
             var x=Math.floor(Math.random()*(max_3-min+1))+min;
             if (kicon_index.includes(x)==false && m<=6){
@@ -210,7 +212,7 @@ $(document).ready(function() {
                 continue;
             }
         }
-
+		// Es wird geprüft, ob die richtige Lizenz auch enthalten ist
         for (var i=0; i<=6; i++)
         {
             if(kicon_index.includes(kindex)==false && i<=6){
@@ -258,7 +260,8 @@ $(document).ready(function() {
 	  });
 		
     });
-	
+	// Hier wird es geprüft, ob die augewählte Antworten richtig sind oder falsch und dementsprechen gefärbt
+	//grün fur richtige und rot für falsche und die, die richtig waren aber nicht ausgewählt wurden 
 	$('#kartenstapel_check').click(function(){
 		$('#kartenstapel').toggleClass("displaynone");
 		$('#kartenstapel_check').toggleClass("displaynone");
@@ -286,6 +289,7 @@ $(document).ready(function() {
 		});
 		ang_karte.splice(0, ang_karte.length);
 		ang_lizenz.splice(0, ang_lizenz.length);
+		// Score wird ausgegeben
 		var ausgabe=document.getElementById("score1");
 		var ergebnis=('Score: '+score);
 		ausgabe.innerHTML=ergebnis;
@@ -293,7 +297,7 @@ $(document).ready(function() {
 	});
 	
 
-    //Kartenstappel Click
+    //Kartenstappel_Level_2 Click
     $('#kartenstapel_2').click(function(){
         var index_1=Math.floor(Math.random()*(max_2-min+1))+min;
         gindex_1=index_1;
@@ -355,7 +359,7 @@ $(document).ready(function() {
 		$('#antwort_7').off('click').click(function(){
 		  $(this).toggleClass("antwort_checked");
 	  });
-		
+		//localStorage für Level 2 werden automatisch gespeichert
 		localStorage.setItem('INDEX_1', JSON.stringify(index_1));
         localStorage.setItem('INDEX_2', JSON.stringify(index_2));
         localStorage.setItem('I', JSON.stringify(i));
@@ -364,7 +368,8 @@ $(document).ready(function() {
         localStorage.setItem('ICON_INDEX', JSON.stringify(icon_index));
     });
 	
-    
+    // Hier wird es geprüft, ob die augewählte Antworten richtig sind oder falsch und dementsprechen gefärbt
+	//grün fur richtige und rot für falsche und die, die richtig waren aber nicht ausgewählt wurden
 	$('#kartenstapel_2check').click(function(){
 		$('#kartenstapel_2').toggleClass("displaynone");
 		$('#kartenstapel_2check').toggleClass("displaynone");
@@ -459,5 +464,5 @@ $(document).ready(function() {
 		
     });
 });
-
+// Die preloader Funktion wird gestartet
 preloader();

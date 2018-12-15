@@ -3,6 +3,7 @@
 	<head>
 		<meta  charset="utf-8"/>
 		<title>OER-Spiel</title>
+		<!--Einbindung von externen Dateien-->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<script>window.jQuery || document.write('<script src="jquery-3.3.1.min.js"><\/script>')</script>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet"> <!--Google  Roboto-Fonts für Latin Extended -->
@@ -12,12 +13,15 @@
 		<script src="prefixfree.min.js"></script> <!--Präfixfree für CSS-->
 		<link type="text/css" href="stylesheet.css" rel="stylesheet" />
 	</head>
-	<body>		
+	<body>	
+		<!--Audio hochladen -->
 		<audio id="myAudio" loop>
 			<source src="audio/bsp.mp3" type="audio/mpeg" >
 		</audio>
+		<!--Das Hauptfenster-->
 	<div id="main_gitter" class="gitter">
 		<div id="container_grau" class="grau_container" >
+			<!--Einleitung Seite-->
 			<div id="id_einleitung" class="hilfeseite rueckseite" >
 				<h1>Einleitung</h1>
 				<p>
@@ -34,6 +38,7 @@
 					<a id="einleitung_close" href="#" class="a_close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
 				</div>
 			</div>
+		<!--1.Hilfe Seite -->
 			<div id="id_hilfeseite_1" class="hilfeseite rueckseite">
 				<h1>Creative Commons</h1>
 				<h2>Die Rechtemodule:</h2>	
@@ -47,6 +52,7 @@
 					<a id="a1_rechts" href="#" class="a_rechts"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
 				</div> 
 			</div>
+		<!--2.Hilfe Seite-->
 			<div id="id_hilfeseite_2" class="hilfeseite rueckseite">
 				<h1>Creative Commons</h1>
 				<h2>Die aktuellen Lizenzen:</h2>
@@ -63,6 +69,7 @@
 				<a id="a2_rechts" href="#" class="a_rechts disabled"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
 				</div>
 			</div> 
+		<!--Das Fenster mit Buttons-->
 			<div id="main_div" class="main_divstyle">
 				<div id="level_container" class="grün_container displaynone">
 					<button id="level_1" type="button" class="button_style">Level 1</button>
@@ -80,6 +87,7 @@
 					</button>
 				</div> 
 			</div>
+		<!--Das Fenster für Level 1-->
 			<div id="main_div1" class="main_div1style displaynone">
 				<p id="score1"></p>
 				<div id="level1_karte"><img alt=""></div>
@@ -93,6 +101,7 @@
 					<div id="antwort_71" class="antwort_button" data-antwortkey="6"><img alt=""></div>
 				</div>		
 			</div>
+		<!--Das Fenster für Level 2-->
 			<div id="main_div2" class="main_div1style displaynone">
 				<p id="score2"></p>
 				<p id="frage" class="displaynone"><b>Welche <i>CC</i> Kombination?</b></p>
@@ -108,6 +117,7 @@
 					<div id="antwort_7" class="antwort_button" data-antwortkey="6"><img alt=""></div>
 				</div>
 			</div>
+		<!--Das Fenster mit den Hilfe-, Sound- und Homebutton-->
 			<div id="rechts_div">
 				<button id="hilfe" type="button" class="recht fa fa-question-circle fa-3x"></button>
 				<button id="sound" type="button" class="recht sound_icon fa fa-volume-off fa-3x"></button>
@@ -129,6 +139,7 @@
 			</div>
 
 		</div>
+		<!--Der Benutzer wird informiert, dass er JavaScript aktivieren soll.-->
 		<noscript> Definiere die Seite ohne JavaScript. Der Inhalt des noscript-Elements wird angezeigt, wenn in einem Kontext Javascript deaktiviert ist. 
 			<div> 
 				<div id="no-script"> 	

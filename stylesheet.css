@@ -1,3 +1,4 @@
+/*Style für alle HTML Elemente*/
 body {
    	font-family: sans-serif;
 	background-image:url("images/FilzOER.svg");
@@ -47,7 +48,7 @@ body {
     font-size: 14px;
     font-weight: normal;
 }
-/*         */
+/*Style von dem Hauptfenster*/
 .grau_container {
     display: grid;
     background-color: rgb(240, 240, 240);
@@ -58,7 +59,7 @@ body {
     margin: 13px auto;
 
 }
-
+/*Style von dem linken Fenster*/
 .main_divstyle {
     background: #E6F3CD;
     border: 3px solid #99CC33;
@@ -70,7 +71,7 @@ body {
 
 
 }
-
+/*Hintergrund Tafel*/
 .main_divtafel {
 	background: url("images/tafel.png");
 	background-size: 100% 100%;
@@ -97,7 +98,7 @@ body {
 
 
 
-
+/*Style von dem rechten Fenster*/
 #rechts_div {
     background: #E6F3CD;
     border: 3px solid #99CC33;
@@ -151,13 +152,12 @@ body {
     transform: rotateY(-180deg);
 } 
 
+/*HTML Elemente stylen*/
 h1 {
     text-align: center;
 }
 
-wbr {
-	text-indent: 2em;
-}
+
 h2, h3{
     text-indent: 2em;
 }
@@ -168,6 +168,7 @@ h2, h3{
 	text-indent: 2em;
 }
 
+/*Icon Style*/
 .iconclass {
     height: 50px;
     width: 50px;
@@ -192,6 +193,7 @@ h2, h3{
     vertical-align: -10px;
 } 
 
+/*Score Style*/
 #score1, #score2 {
 	font-size: 24px;
 	grid-area: 1 / 5 / span 1 / span 1;
@@ -200,6 +202,7 @@ h2, h3{
 	align-self: end;
 }
 
+/*Frage für den Level 2*/
 #frage {
 	grid-area: 1 / 2 / span 2 / span 3;
 	font-size: 43px;
@@ -207,6 +210,8 @@ h2, h3{
 	align-self: center;
 	justify-self: center;
 }
+
+/*Style vom Menü auf den Hilfeseiten*/
 .menu_hilfe{
     background: #E6F3CD;
     border: 3px solid #99CC33;
@@ -295,7 +300,7 @@ h2, h3{
     padding-bottom: 2px;
   }
 
-  /* Kartenstapel */  
+  /* Kartenstapel Style */  
   .kartenstapel_style {
     grid-area: 7 / 2 / 8 / 5;
     box-shadow: 3px 4px 3px 1px rgb(95, 141, 2);
@@ -375,6 +380,7 @@ h2, h3{
 	border: 5px solid #9C0000;
 }
 
+/*Footer Style*/
 footer {
 	display: grid; 
 	grid-template-columns: 1fr 1fr 1fr 1fr 20px;
@@ -390,6 +396,8 @@ footer {
 	justify-self: end;
 	align-self: center;
 }
+
+/*Style für verschiedene Größe des Bildschirms*/
 
 @media (max-width: 810px) or (max-height: 490px)
 {	
