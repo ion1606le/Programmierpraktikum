@@ -4,7 +4,7 @@ Das OER-Kartenspiel ist ein Spiel, womit man die richtige Kombination von <b><i>
 
 ## Getting Started
 
-Um das Spiel testen und weiterentwickeln zu können, soll die entsprechende repository heruntergeladen werden.
+Um das Spiel testen und weiterentwickeln zu können, soll die entsprechende Repository heruntergeladen werden.
 Man kann das unter diesem Link machen https://git.uni-wuppertal.de/1326204/Programmierpraktikum.git
 
 ### Prerequisites
