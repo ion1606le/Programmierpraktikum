@@ -489,8 +489,8 @@ $(document).ready(function() {
         $('#k_play, #k_play_2').removeClass("kartenstapel_play fa fa-3x fa-play");
         $('#kartenstapel, #kartenstapel_text, #kartenstapel_check').addClass("displaynone");
 		$('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
-		$('#frage, #score2').addClass("displaynone");
-		$('#frage1, #score1').addClass("displaynone");
+		$('#frage, #score2, #level2_button').addClass("displaynone");
+		$('#frage1, #score1, #level1_button').addClass("displaynone");
 		
     });
 });
