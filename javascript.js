@@ -144,9 +144,10 @@ $(document).ready(function() {
 		$('#main_div').toggleClass("displaynone");
 		$('#main_div1').toggleClass("displaynone");
 		document.getElementById("home").style.display = "block";
-		$('#kartenstapel').removeClass("displaynone");
+		$('#kartenstapel, #score1').removeClass("displaynone");
         	$('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
 		$('#kartenstapel_text').removeClass("displaynone");
+
 	});
 
 	//Level_2_button Click
@@ -156,7 +157,7 @@ $(document).ready(function() {
 		$('#main_div2').toggleClass("displaynone");
 		document.getElementById("home").style.display = "block";
 	    	$('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
-        	$('#kartenstapel_2').removeClass("displaynone");
+        	$('#kartenstapel_2, #score2').removeClass("displaynone");
 		$('#kartenstapel_2text').removeClass("displaynone");
 		
 	});
@@ -201,6 +202,8 @@ $(document).ready(function() {
         var m=0;
         $('#kartenstapel').toggleClass("displaynone");
 		$('#kartenstapel_check').toggleClass("displaynone");
+		$('#frage1').removeClass("displaynone");
+		$('#level2_button').removeClass("displaynone");
 		//Es wird ein Array mit zufälligen Zahlen generiert
         while (m<=6){
             var x=Math.floor(Math.random()*(max_3-min+1))+min;
@@ -296,7 +299,19 @@ $(document).ready(function() {
 		
 	});
 	
+	//Click auf dem Level1 Button
+	$('#level2_button').click(function(){
+		$('img').removeAttr('src');
+		$('#main_div2').toggleClass("displaynone");
+		$('#main_div1, #level2_button').addClass("displaynone");
+        $('#k_play').removeClass("kartenstapel_play fa fa-3x fa-play");
+        $('#kartenstapel, #kartenstapel_text, #kartenstapel_check').addClass("displaynone");
+		$('#frage1, #score1').addClass("displaynone");
+		$('#kartenstapel_2, #score2').removeClass("displaynone");
+        $('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
+		$('#kartenstapel_2text').removeClass("displaynone");
 
+	});
     //Kartenstappel_Level_2 Click
     $('#kartenstapel_2').click(function(){
         var index_1=Math.floor(Math.random()*(max_2-min+1))+min;
@@ -310,7 +325,8 @@ $(document).ready(function() {
         var m=0;
 		$('#kartenstapel_2').toggleClass("displaynone");
 		$('#kartenstapel_2check').toggleClass("displaynone");
-        $('#frage').removeClass("displaynone");
+		$('#frage').removeClass("displaynone");
+		$('#level1_button').removeClass("displaynone");
         while (m<=6){
                 var x=Math.floor(Math.random()*(max_2-min+1))+min;
                 if (icon_index.includes(x)==false && m<=6){
@@ -402,6 +418,20 @@ $(document).ready(function() {
 		ausgabe.innerHTML=ergebnis;
 		
 	});
+
+	//Click auf dem Level2 Button
+	$('#level1_button').click(function(){
+		$('img').removeAttr('src');
+		$('#main_div1').toggleClass("displaynone");
+		$('#main_div2, #level1_button').addClass("displaynone");
+        $('#k_play').removeClass("kartenstapel_play fa fa-3x fa-play");
+        $('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
+		$('#frage, #score2').addClass("displaynone");
+		$('#kartenstapel, #score1').removeClass("displaynone");
+        $('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
+		$('#kartenstapel_text').removeClass("displaynone");
+
+	});
 	
     //Klick von Soundsbutton
     $('#sound').click(function(){
@@ -451,7 +481,7 @@ $(document).ready(function() {
     //Klick Home
     $('#home').click(function(){
 	$('img').removeAttr('src');
-        $('#main_div').toggleClass("displaynone");
+    $('#main_div').toggleClass("displaynone");
 	$('#main_div2').addClass("displaynone");
 	$('#main_div1').addClass("displaynone");
 	$('#container_grün').toggleClass("displaynone");
@@ -459,7 +489,8 @@ $(document).ready(function() {
         $('#k_play, #k_play_2').removeClass("kartenstapel_play fa fa-3x fa-play");
         $('#kartenstapel, #kartenstapel_text, #kartenstapel_check').addClass("displaynone");
 		$('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
-		$('#frage').addClass("displaynone");
+		$('#frage, #score2').addClass("displaynone");
+		$('#frage1, #score1').addClass("displaynone");
 		
     });
 });
