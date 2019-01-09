@@ -23,7 +23,8 @@ function preloader(){
      for (i=0; i<=9; i++)
      {
          for (j=0; j<imageArray[i].length; j++){
-         imageObj[i][j]=new Image();
+		 imageObj[i][j]=new Image();
+		 imageObj[i][j].onload=
          imageObj[i][j].src=imageArray[i][j];
         }
     }
@@ -353,6 +354,8 @@ $(document).ready(function() {
 		
 		$('.antwort_falsch').removeClass('antwort_falsch');
 		$('.antwort_richtig').removeClass('antwort_richtig');
+		$('.antwort_checked').removeClass('antwort_checked');
+
 		
 		$('#antwort_1').off('click').click(function(){
 		  $(this).toggleClass("antwort_checked");
@@ -481,7 +484,7 @@ $(document).ready(function() {
     //Klick Home
     $('#home').click(function(){
 	$('img').removeAttr('src');
-    $('#main_div').toggleClass("displaynone");
+	$('#main_div').removeClass("displaynone");
 	$('#main_div2').addClass("displaynone");
 	$('#main_div1').addClass("displaynone");
 	$('#container_grün').toggleClass("displaynone");
