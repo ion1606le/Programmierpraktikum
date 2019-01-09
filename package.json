@@ -1,0 +1,15 @@
+{
+  "name": "oerkartenspiel",
+  "version": "1.0.0",
+  "description": "Das OER-Kartenspiel ist ein Spiel, womit man die richtige Kombination von <b><i>Creative Commons</i></b> Lizenzen lernen kann.",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.uni-wuppertal.de:1326204/Programmierpraktikum.git"
+  },
+  "author": "Ion Efrem",
+  "license": "MIT"
+}
