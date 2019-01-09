@@ -240,6 +240,7 @@ $(document).ready(function() {
 		
 		$('.antwort_falsch').removeClass('antwort_falsch');
 		$('.antwort_richtig').removeClass('antwort_richtig');
+		$('.antwort_checked').removeClass('antwort_checked');
 		
 		$('#antwort_11').off('click').click(function(){
 		  $(this).toggleClass("antwort_checked");
