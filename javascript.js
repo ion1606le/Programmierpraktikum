@@ -148,6 +148,7 @@ $(document).ready(function() {
 		$('#kartenstapel, #score1').removeClass("displaynone");
         	$('#k_play').toggleClass("kartenstapel_play fa fa-play fa-3x");
 		$('#kartenstapel_text').removeClass("displaynone");
+		$('#hallo1').removeClass("displaynone");
 
 	});
 
@@ -160,6 +161,7 @@ $(document).ready(function() {
 	    	$('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
         	$('#kartenstapel_2, #score2').removeClass("displaynone");
 		$('#kartenstapel_2text').removeClass("displaynone");
+		$('#hallo2').removeClass("displaynone");
 		
 	});
     
@@ -205,6 +207,7 @@ $(document).ready(function() {
 		$('#kartenstapel_check').toggleClass("displaynone");
 		$('#frage1').removeClass("displaynone");
 		$('#level2_button').removeClass("displaynone");
+		$('#hallo1').addClass("displaynone");
 		//Es wird ein Array mit zufälligen Zahlen generiert
         while (m<=6){
             var x=Math.floor(Math.random()*(max_3-min+1))+min;
@@ -329,6 +332,7 @@ $(document).ready(function() {
 		$('#kartenstapel_2check').toggleClass("displaynone");
 		$('#frage').removeClass("displaynone");
 		$('#level1_button').removeClass("displaynone");
+		$('#hallo2').addClass("displaynone");
         while (m<=6){
                 var x=Math.floor(Math.random()*(max_2-min+1))+min;
                 if (icon_index.includes(x)==false && m<=6){
@@ -428,7 +432,7 @@ $(document).ready(function() {
 		$('img').removeAttr('src');
 		$('#main_div1').toggleClass("displaynone");
 		$('#main_div2, #level1_button').addClass("displaynone");
-        $('#k_play').removeClass("kartenstapel_play fa fa-3x fa-play");
+        $('#k_play').toggleClass("kartenstapel_play fa fa-3x fa-play");
         $('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
 		$('#frage, #score2').addClass("displaynone");
 		$('#kartenstapel, #score1').removeClass("displaynone");
