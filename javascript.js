@@ -14,7 +14,7 @@ function preloader(){
         /*CC-BY-ND*/ ["images/Spielkarten_1/cc-by-nd/Spielkarte_g2-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2-zahnrad-cc-by-nd.png","images/Spielkarten_1/cc-by-nd/Spielkarte_g2_3D-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_elp-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_film-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_foto-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_platine-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_ppt-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_tabelle-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_text-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_ton-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_video-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_worte-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_g2_wuerfel-cc-by-nd.png", "images/Spielkarten_1/cc-by-nd/Spielkarte_grafik-cc-b-ndy.png"],
         /*CC-BY-NC-ND*/ ["images/Spielkarten_1/cc-by-nc-nd/Spielkarte_b_text-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_g_text-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr-zahnrad-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_3D-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_elp-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_film-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_foto-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_platine-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_ppt-cc-by-nd-nc.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_tabelle-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_ton-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_video-cc-by-nn-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_worte-cc-by-nc-nd.png", "images/Spielkarten_1/cc-by-nc-nd/Spielkarte_gr_wuerfel-cc-by-nc-nd.png"],
         /*CC-BY-NC-SA*/ ["images/Spielkarten_1/cc-by-nc-sa/Sk_detektive-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Sk_fi_text-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl-zahnrad-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_3D-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_elp-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_film-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_foto-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_platine-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_ppt-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_tabelle-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_ton-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_video-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_worte-cc-by-nc-sa.png", "images/Spielkarten_1/cc-by-nc-sa/Spielkarte_fl_wuerfel-cc-by-nc-sa.png"],
-        /*Icon_Antworten*/ ["images/cc_Icon/Icon_2/cc0.png", "images/cc_Icon/Icon_2/cc-by.png", "images/cc_Icon/Icon_2/cc-by-nc.png", "images/cc_Icon/Icon_2/cc-by-sa.png", "images/cc_Icon/Icon_2/cc-by-nd.png", "images/cc_Icon/Icon_2/cc-by-nc-nd.png", "images/cc_Icon/Icon_2/cc-by-nc-sa.png"], 
+        /*Icon_Antworten*/ ["images/cc_Icon/Icon_2/cc0.png", "images/cc_Icon/Icon_2/cc-by.png", "images/cc_Icon/Icon_2/cc-by-NC.png", "images/cc_Icon/Icon_2/cc-by-sa.png", "images/cc_Icon/Icon_2/cc-by-ND.png", "images/cc_Icon/Icon_2/cc-by-nc-nd.png", "images/cc_Icon/Icon_2/cc-by-nc-sa.png"], 
         /* Tutorial */ ["images/Spielkarten_2/kürzel_0.png", "images/Spielkarten_2/kürzel_by.png", "images/Spielkarten_2/kürzel_sa.png", "images/Spielkarten_2/kürzel_nc.png", "images/Spielkarten_2/icon_Kürzel_ND.png", "images/Spielkarten_2/kürzel_by_nc.png", "images/Spielkarten_2/kürzel_by_sa.png", "images/Spielkarten_2/kürzel_by_nd.png", "images/Spielkarten_2/kürzel_by_nc_nd.png", "images/Spielkarten_2/kürzel_by_nc_sa.png"],
         /* Tutorial-Antworten */ ["images/cc_Icon/Icon_1/cc0.png", "images/cc_Icon/Icon_1/cc-by.png", "images/cc_Icon/Icon_1/cc-sa.png", "images/cc_Icon/Icon_1/cc-nc.png", "images/cc_Icon/Icon_1/cc-nd.png", "images/cc_Icon/Icon_1/cc-by-nc.png", "images/cc_Icon/Icon_1/cc-by-sa.png", "images/cc_Icon/Icon_1/cc-by-nd.png", "images/cc_Icon/Icon_1/cc-by-nc-nd.png", "images/cc_Icon/Icon_1/cc-by-nc-sa.png"]
     ]; 
@@ -315,6 +315,10 @@ $(document).ready(function() {
 		$('#kartenstapel_2, #score2').removeClass("displaynone");
         $('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
 		$('#kartenstapel_2text').removeClass("displaynone");
+		$('.antwort_falsch').removeClass('antwort_falsch');
+		$('.antwort_richtig').removeClass('antwort_richtig');
+		$('.antwort_checked').removeClass('antwort_checked');
+		$('#hallo2').removeClass("displaynone");
 
 	});
     //Kartenstappel_Level_2 Click
@@ -438,6 +442,10 @@ $(document).ready(function() {
 		$('#kartenstapel, #score1').removeClass("displaynone");
         $('#k_play_2').toggleClass("kartenstapel_play fa fa-play fa-3x");
 		$('#kartenstapel_text').removeClass("displaynone");
+		$('.antwort_falsch').removeClass('antwort_falsch');
+		$('.antwort_richtig').removeClass('antwort_richtig');
+		$('.antwort_checked').removeClass('antwort_checked');
+		$('#hallo1').removeClass("displaynone");
 
 	});
 	
@@ -458,7 +466,8 @@ $(document).ready(function() {
     //Klick von Hilfebutton
     $('#hilfe').click(function(){
         $('#id_hilfeseite_1').toggleClass("rueckseite");
-        $('#main_div').toggleClass("disabled_1");
+		$('#main_div').toggleClass("disabled_1");
+		$('#level1_button, #level2_button, #kartenstapel, #kartenstapel_2').addClass("displaynone");
     });
 
     $('#a1_rechts').click(function(){
@@ -469,7 +478,10 @@ $(document).ready(function() {
         $('#id_hilfeseite_1').addClass("rueckseite"); 
         $('#id_hilfeseite_2').addClass("rueckseite");
 	$('#main_div').toggleClass("disabled_1");
-    });
+	if ($('#kartenstapel_text').hasClass('displaynone')==false || $('#kartenstapel_2text').hasClass('displaynone')==false) {
+		$('#level1_button, #level2_button, #kartenstapel, #kartenstapel_2').removeClass("displaynone");
+	}
+	});
 
     $('#a2_links').click(function(){
         $('#id_hilfeseite_2').toggleClass("rueckseite");
@@ -499,6 +511,9 @@ $(document).ready(function() {
 		$('#kartenstapel_2, #kartenstapel_2text, #kartenstapel_2check').addClass("displaynone");
 		$('#frage, #score2, #level2_button').addClass("displaynone");
 		$('#frage1, #score1, #level1_button').addClass("displaynone");
+		$('.antwort_falsch').removeClass('antwort_falsch');
+		$('.antwort_richtig').removeClass('antwort_richtig');
+		$('.antwort_checked').removeClass('antwort_checked');
 		
     });
 });
